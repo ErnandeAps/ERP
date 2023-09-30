@@ -1,0 +1,13 @@
+D:\Desenvolvimento\Erp\Erp\Erp\bin\Debug\Erp.exe.config
+D:\Desenvolvimento\Erp\Erp\Erp\bin\Debug\Erp.exe
+D:\Desenvolvimento\Erp\Erp\Erp\bin\Debug\Erp.pdb
+D:\Desenvolvimento\Erp\Erp\Erp\obj\Debug\Erp.csproj.AssemblyReference.cache
+D:\Desenvolvimento\Erp\Erp\Erp\obj\Debug\Erp.FrmDashboard.resources
+D:\Desenvolvimento\Erp\Erp\Erp\obj\Debug\Erp.Properties.Resources.resources
+D:\Desenvolvimento\Erp\Erp\Erp\obj\Debug\Erp.csproj.GenerateResource.cache
+D:\Desenvolvimento\Erp\Erp\Erp\obj\Debug\Erp.csproj.CoreCompileInputs.cache
+D:\Desenvolvimento\Erp\Erp\Erp\obj\Debug\Erp.exe
+D:\Desenvolvimento\Erp\Erp\Erp\obj\Debug\Erp.pdb
+D:\Desenvolvimento\Erp\Erp\Erp\obj\Debug\ERP.FrmClientes.resources
+D:\Desenvolvimento\Erp\Erp\Erp\obj\Debug\Erp.Formularios.FrmCadastros.resources
+D:\Desenvolvimento\Erp\Erp\Erp\obj\Debug\SuportekService.FrmCadCliente.resources

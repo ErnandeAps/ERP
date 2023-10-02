@@ -50,11 +50,14 @@ namespace Erp
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblLogo = new System.Windows.Forms.Label();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.pnlPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -320,11 +323,23 @@ namespace Erp
             // 
             // pnlPrincipal
             // 
+            this.pnlPrincipal.Controls.Add(this.pictureBox2);
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(125, 53);
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(1062, 572);
             this.pnlPrincipal.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1062, 572);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // FrmDashboard
             // 
@@ -349,6 +364,8 @@ namespace Erp
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.pnlPrincipal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,6 +392,7 @@ namespace Erp
         private System.Windows.Forms.Label lblFuncao;
         private System.Windows.Forms.Label lblLogo;
         private System.Windows.Forms.Panel pnlPrincipal;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

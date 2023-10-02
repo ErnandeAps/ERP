@@ -1,4 +1,4 @@
-﻿using Erp.Formularios;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -75,7 +75,7 @@ namespace Erp
 
         private void btnCadastros_Click(object sender, EventArgs e)
         {
-            FrmCadastros frm = new FrmCadastros();
+            FrmTelaCadastros frm = new FrmTelaCadastros();
             frm.TopLevel = false;
             pnlPrincipal.Controls.Add(frm);
             frm.Show();

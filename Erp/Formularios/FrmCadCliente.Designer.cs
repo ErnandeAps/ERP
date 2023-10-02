@@ -1,4 +1,4 @@
-﻿namespace SuportekService
+﻿namespace Erp
 {
     partial class FrmCadCliente
     {
@@ -281,6 +281,7 @@
             this.BtnPcnpj.Size = new System.Drawing.Size(30, 30);
             this.BtnPcnpj.TabIndex = 21;
             this.BtnPcnpj.UseVisualStyleBackColor = true;
+            this.BtnPcnpj.Click += new System.EventHandler(this.BtnPcnpj_Click);
             // 
             // lbTipo
             // 
@@ -311,6 +312,7 @@
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(66, 21);
             this.cbTipo.TabIndex = 1;
+            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipop_SelectedIndexChanged);
             // 
             // txtNum
             // 
@@ -335,6 +337,7 @@
             this.btCep.Size = new System.Drawing.Size(30, 30);
             this.btCep.TabIndex = 14;
             this.btCep.UseVisualStyleBackColor = true;
+            this.btCep.Click += new System.EventHandler(this.btCep_Click);
             // 
             // txtUf
             // 
@@ -480,6 +483,7 @@
             this.novoToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
             this.novoToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.novoToolStripMenuItem.Text = "Novo";
+            this.novoToolStripMenuItem.Click += new System.EventHandler(this.novoToolStripMenuItem_Click);
             // 
             // salvarToolStripMenuItem
             // 
@@ -488,6 +492,7 @@
             this.salvarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
             this.salvarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.salvarToolStripMenuItem.Text = "Salvar";
+            this.salvarToolStripMenuItem.Click += new System.EventHandler(this.salvarToolStripMenuItem_Click);
             // 
             // localizarToolStripMenuItem
             // 
@@ -496,6 +501,7 @@
             this.localizarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
             this.localizarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.localizarToolStripMenuItem.Text = "Localizar";
+            this.localizarToolStripMenuItem.Click += new System.EventHandler(this.localizarToolStripMenuItem_Click);
             // 
             // excluirToolStripMenuItem
             // 
@@ -504,6 +510,7 @@
             this.excluirToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
             this.excluirToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.excluirToolStripMenuItem.Text = "Excluir";
+            this.excluirToolStripMenuItem.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -511,6 +518,7 @@
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // relatóriosToolStripMenuItem
             // 
@@ -577,7 +585,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(49, 46);
             this.panel1.TabIndex = 15;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label18
             // 
@@ -609,7 +616,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(49, 46);
             this.panel2.TabIndex = 16;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label19
             // 
@@ -729,7 +735,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 390);
+            this.ClientSize = new System.Drawing.Size(665, 391);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
@@ -747,6 +753,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de clientes";
             this.Load += new System.EventHandler(this.FrmCadCliente_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmCadCliente_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.34031.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erp", "Erp\Erp.csproj", "{41EF5C45-93E1-4DD7-ACB3-D1DABC12FDBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erp", "Erp\Erp.csproj", "{98A2ADAC-7C07-42DC-B91D-A1D4872006A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{41EF5C45-93E1-4DD7-ACB3-D1DABC12FDBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{41EF5C45-93E1-4DD7-ACB3-D1DABC12FDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{41EF5C45-93E1-4DD7-ACB3-D1DABC12FDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{41EF5C45-93E1-4DD7-ACB3-D1DABC12FDBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98A2ADAC-7C07-42DC-B91D-A1D4872006A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98A2ADAC-7C07-42DC-B91D-A1D4872006A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98A2ADAC-7C07-42DC-B91D-A1D4872006A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98A2ADAC-7C07-42DC-B91D-A1D4872006A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2C9BB1D1-A5BE-4F0A-AF79-D509EAEE7B23}
+		SolutionGuid = {36DA0123-0E27-4639-A158-04EFBD2F879D}
 	EndGlobalSection
 EndGlobal

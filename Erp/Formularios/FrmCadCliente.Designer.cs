@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadCliente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.maskDataNasc = new System.Windows.Forms.MaskedTextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIE = new System.Windows.Forms.MaskedTextBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.maskData = new System.Windows.Forms.MaskedTextBox();
             this.txtRoteiro = new System.Windows.Forms.TextBox();
@@ -75,36 +81,23 @@
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relaçãoGeralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btNovo = new System.Windows.Forms.Button();
-            this.btLocalizar = new System.Windows.Forms.Button();
-            this.btExcluir = new System.Windows.Forms.Button();
-            this.btSair = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label29);
+            this.groupBox1.Controls.Add(this.maskDataNasc);
+            this.groupBox1.Controls.Add(this.label28);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtIE);
+            this.groupBox1.Controls.Add(this.label27);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.maskData);
             this.groupBox1.Controls.Add(this.txtRoteiro);
@@ -141,12 +134,63 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtNome);
-            this.groupBox1.Location = new System.Drawing.Point(10, 27);
+            this.groupBox1.Location = new System.Drawing.Point(5, 96);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(647, 299);
+            this.groupBox1.Size = new System.Drawing.Size(647, 326);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados cadastrais";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(17, 181);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(60, 13);
+            this.label29.TabIndex = 43;
+            this.label29.Text = "DT NASC.:";
+            // 
+            // maskDataNasc
+            // 
+            this.maskDataNasc.Location = new System.Drawing.Point(17, 196);
+            this.maskDataNasc.Mask = "00/00/0000";
+            this.maskDataNasc.Name = "maskDataNasc";
+            this.maskDataNasc.Size = new System.Drawing.Size(83, 20);
+            this.maskDataNasc.TabIndex = 14;
+            this.maskDataNasc.ValidatingType = typeof(System.DateTime);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(256, 142);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(61, 13);
+            this.label28.TabIndex = 41;
+            this.label28.Text = "CÓD. IBJE:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(256, 158);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(123, 20);
+            this.textBox1.TabIndex = 12;
+            // 
+            // txtIE
+            // 
+            this.txtIE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIE.Location = new System.Drawing.Point(367, 31);
+            this.txtIE.Name = "txtIE";
+            this.txtIE.Size = new System.Drawing.Size(103, 26);
+            this.txtIE.TabIndex = 3;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(364, 16);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(20, 13);
+            this.label27.TabIndex = 39;
+            this.label27.Text = "IE:";
             // 
             // label16
             // 
@@ -168,16 +212,16 @@
             // 
             // txtRoteiro
             // 
-            this.txtRoteiro.Location = new System.Drawing.Point(17, 238);
+            this.txtRoteiro.Location = new System.Drawing.Point(17, 241);
             this.txtRoteiro.Multiline = true;
             this.txtRoteiro.Name = "txtRoteiro";
-            this.txtRoteiro.Size = new System.Drawing.Size(612, 44);
-            this.txtRoteiro.TabIndex = 15;
+            this.txtRoteiro.Size = new System.Drawing.Size(612, 70);
+            this.txtRoteiro.TabIndex = 18;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(14, 222);
+            this.label15.Location = new System.Drawing.Point(14, 225);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(59, 13);
             this.label15.TabIndex = 33;
@@ -193,15 +237,15 @@
             // 
             // txtContato
             // 
-            this.txtContato.Location = new System.Drawing.Point(229, 196);
+            this.txtContato.Location = new System.Drawing.Point(318, 196);
             this.txtContato.Name = "txtContato";
-            this.txtContato.Size = new System.Drawing.Size(400, 20);
-            this.txtContato.TabIndex = 14;
+            this.txtContato.Size = new System.Drawing.Size(311, 20);
+            this.txtContato.TabIndex = 17;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(226, 180);
+            this.label14.Location = new System.Drawing.Point(315, 180);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(62, 13);
             this.label14.TabIndex = 31;
@@ -210,7 +254,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(120, 181);
+            this.label13.Location = new System.Drawing.Point(209, 181);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(59, 13);
             this.label13.TabIndex = 29;
@@ -218,16 +262,16 @@
             // 
             // maskCelular
             // 
-            this.maskCelular.Location = new System.Drawing.Point(123, 196);
+            this.maskCelular.Location = new System.Drawing.Point(212, 196);
             this.maskCelular.Mask = "(99) 00000-0000";
             this.maskCelular.Name = "maskCelular";
             this.maskCelular.Size = new System.Drawing.Size(100, 20);
-            this.maskCelular.TabIndex = 13;
+            this.maskCelular.TabIndex = 16;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 181);
+            this.label12.Location = new System.Drawing.Point(103, 181);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 13);
             this.label12.TabIndex = 27;
@@ -235,11 +279,11 @@
             // 
             // maskFone
             // 
-            this.maskFone.Location = new System.Drawing.Point(17, 196);
+            this.maskFone.Location = new System.Drawing.Point(106, 196);
             this.maskFone.Mask = "(99) 0000-0000";
             this.maskFone.Name = "maskFone";
             this.maskFone.Size = new System.Drawing.Size(100, 20);
-            this.maskFone.TabIndex = 12;
+            this.maskFone.TabIndex = 15;
             // 
             // label11
             // 
@@ -256,19 +300,19 @@
             this.txtFantasia.MaxLength = 100;
             this.txtFantasia.Name = "txtFantasia";
             this.txtFantasia.Size = new System.Drawing.Size(307, 20);
-            this.txtFantasia.TabIndex = 4;
+            this.txtFantasia.TabIndex = 5;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(266, 158);
+            this.txtEmail.Location = new System.Drawing.Point(385, 158);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(363, 20);
-            this.txtEmail.TabIndex = 11;
+            this.txtEmail.Size = new System.Drawing.Size(244, 20);
+            this.txtEmail.TabIndex = 13;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(263, 142);
+            this.label9.Location = new System.Drawing.Point(382, 143);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 13);
             this.label9.TabIndex = 23;
@@ -276,6 +320,7 @@
             // 
             // BtnPcnpj
             // 
+            this.BtnPcnpj.Image = ((System.Drawing.Image)(resources.GetObject("BtnPcnpj.Image")));
             this.BtnPcnpj.Location = new System.Drawing.Point(326, 26);
             this.BtnPcnpj.Name = "BtnPcnpj";
             this.BtnPcnpj.Size = new System.Drawing.Size(30, 30);
@@ -319,7 +364,7 @@
             this.txtNum.Location = new System.Drawing.Point(402, 119);
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(43, 20);
-            this.txtNum.TabIndex = 7;
+            this.txtNum.TabIndex = 8;
             // 
             // label8
             // 
@@ -332,6 +377,7 @@
             // 
             // btCep
             // 
+            this.btCep.Image = ((System.Drawing.Image)(resources.GetObject("btCep.Image")));
             this.btCep.Location = new System.Drawing.Point(95, 112);
             this.btCep.Name = "btCep";
             this.btCep.Size = new System.Drawing.Size(30, 30);
@@ -341,15 +387,15 @@
             // 
             // txtUf
             // 
-            this.txtUf.Location = new System.Drawing.Point(229, 158);
+            this.txtUf.Location = new System.Drawing.Point(218, 158);
             this.txtUf.Name = "txtUf";
             this.txtUf.Size = new System.Drawing.Size(32, 20);
-            this.txtUf.TabIndex = 10;
+            this.txtUf.TabIndex = 11;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(226, 142);
+            this.label7.Location = new System.Drawing.Point(215, 142);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(24, 13);
             this.label7.TabIndex = 13;
@@ -359,8 +405,8 @@
             // 
             this.txtCidade.Location = new System.Drawing.Point(17, 158);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(206, 20);
-            this.txtCidade.TabIndex = 9;
+            this.txtCidade.Size = new System.Drawing.Size(195, 20);
+            this.txtCidade.TabIndex = 10;
             // 
             // label6
             // 
@@ -376,7 +422,7 @@
             this.txtCep.Location = new System.Drawing.Point(17, 118);
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(72, 20);
-            this.txtCep.TabIndex = 5;
+            this.txtCep.TabIndex = 6;
             // 
             // label5
             // 
@@ -392,7 +438,7 @@
             this.txtBairro.Location = new System.Drawing.Point(449, 119);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(180, 20);
-            this.txtBairro.TabIndex = 8;
+            this.txtBairro.TabIndex = 9;
             // 
             // label4
             // 
@@ -415,7 +461,7 @@
             this.txtEnd.Location = new System.Drawing.Point(131, 119);
             this.txtEnd.Name = "txtEnd";
             this.txtEnd.Size = new System.Drawing.Size(265, 20);
-            this.txtEnd.TabIndex = 6;
+            this.txtEnd.TabIndex = 7;
             // 
             // label1
             // 
@@ -451,7 +497,7 @@
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(299, 20);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 4;
             // 
             // menuStrip1
             // 
@@ -478,7 +524,6 @@
             // 
             // novoToolStripMenuItem
             // 
-            this.novoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("novoToolStripMenuItem.Image")));
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
             this.novoToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
             this.novoToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
@@ -487,7 +532,6 @@
             // 
             // salvarToolStripMenuItem
             // 
-            this.salvarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("salvarToolStripMenuItem.Image")));
             this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
             this.salvarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
             this.salvarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
@@ -496,7 +540,6 @@
             // 
             // localizarToolStripMenuItem
             // 
-            this.localizarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("localizarToolStripMenuItem.Image")));
             this.localizarToolStripMenuItem.Name = "localizarToolStripMenuItem";
             this.localizarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
             this.localizarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
@@ -505,7 +548,6 @@
             // 
             // excluirToolStripMenuItem
             // 
-            this.excluirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("excluirToolStripMenuItem.Image")));
             this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
             this.excluirToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
             this.excluirToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
@@ -514,7 +556,6 @@
             // 
             // sairToolStripMenuItem
             // 
-            this.sairToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sairToolStripMenuItem.Image")));
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.sairToolStripMenuItem.Text = "Sair";
@@ -530,221 +571,77 @@
             // 
             // relaçãoGeralToolStripMenuItem
             // 
-            this.relaçãoGeralToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("relaçãoGeralToolStripMenuItem.Image")));
             this.relaçãoGeralToolStripMenuItem.Name = "relaçãoGeralToolStripMenuItem";
             this.relaçãoGeralToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.relaçãoGeralToolStripMenuItem.Text = "Relação geral";
             // 
-            // btNovo
-            // 
-            this.btNovo.Location = new System.Drawing.Point(11, 332);
-            this.btNovo.Name = "btNovo";
-            this.btNovo.Size = new System.Drawing.Size(72, 47);
-            this.btNovo.TabIndex = 10;
-            this.btNovo.Text = "Novo";
-            this.btNovo.UseVisualStyleBackColor = true;
-            this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
-            // 
-            // btLocalizar
-            // 
-            this.btLocalizar.Location = new System.Drawing.Point(90, 332);
-            this.btLocalizar.Name = "btLocalizar";
-            this.btLocalizar.Size = new System.Drawing.Size(72, 47);
-            this.btLocalizar.TabIndex = 11;
-            this.btLocalizar.Text = "Localizar";
-            this.btLocalizar.UseVisualStyleBackColor = true;
-            this.btLocalizar.Click += new System.EventHandler(this.btLocalizar_Click);
-            // 
-            // btExcluir
-            // 
-            this.btExcluir.Enabled = false;
-            this.btExcluir.Location = new System.Drawing.Point(168, 332);
-            this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(72, 47);
-            this.btExcluir.TabIndex = 13;
-            this.btExcluir.Text = "Excluir";
-            this.btExcluir.UseVisualStyleBackColor = true;
-            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
-            // 
-            // btSair
-            // 
-            this.btSair.Location = new System.Drawing.Point(246, 332);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(72, 47);
-            this.btSair.TabIndex = 14;
-            this.btSair.Text = "Limpar/Sair";
-            this.btSair.UseVisualStyleBackColor = true;
-            this.btSair.Click += new System.EventHandler(this.btSair_Click);
-            // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Location = new System.Drawing.Point(388, 332);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnExcluir);
+            this.panel1.Controls.Add(this.btnSalvar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(49, 46);
-            this.panel1.TabIndex = 15;
+            this.panel1.Size = new System.Drawing.Size(665, 66);
+            this.panel1.TabIndex = 20;
             // 
-            // label18
+            // button1
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label18.Location = new System.Drawing.Point(5, 27);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(37, 13);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Novo";
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(122, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(49, 58);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Sair";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label17
+            // btnExcluir
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(9, 2);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(31, 26);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "F2";
+            this.btnExcluir.BackColor = System.Drawing.Color.White;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExcluir.Location = new System.Drawing.Point(67, 3);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(49, 58);
+            this.btnExcluir.TabIndex = 12;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // panel2
+            // btnSalvar
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.label20);
-            this.panel2.Location = new System.Drawing.Point(443, 332);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(49, 46);
-            this.panel2.TabIndex = 16;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label19.Location = new System.Drawing.Point(3, 27);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(43, 13);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Salvar";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(5, 2);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(31, 26);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "F3";
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label21);
-            this.panel3.Controls.Add(this.label22);
-            this.panel3.Location = new System.Drawing.Point(553, 333);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(49, 46);
-            this.panel3.TabIndex = 18;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label21.Location = new System.Drawing.Point(3, 27);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(45, 13);
-            this.label21.TabIndex = 1;
-            this.label21.Text = "Excluir";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(5, 2);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(31, 26);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "F6";
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label23);
-            this.panel4.Controls.Add(this.label24);
-            this.panel4.Location = new System.Drawing.Point(498, 333);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(49, 46);
-            this.panel4.TabIndex = 17;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label23.Location = new System.Drawing.Point(5, 27);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(46, 13);
-            this.label23.TabIndex = 1;
-            this.label23.Text = "Buscar";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(9, 2);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(30, 26);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "F4";
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label25);
-            this.panel5.Controls.Add(this.label26);
-            this.panel5.Location = new System.Drawing.Point(608, 333);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(49, 46);
-            this.panel5.TabIndex = 19;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label25.Location = new System.Drawing.Point(5, 27);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(29, 13);
-            this.label25.TabIndex = 1;
-            this.label25.Text = "Sair";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(1, 2);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(41, 26);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Esc";
+            this.btnSalvar.BackColor = System.Drawing.Color.White;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSalvar.Location = new System.Drawing.Point(12, 3);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(49, 58);
+            this.btnSalvar.TabIndex = 11;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // FrmCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 391);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(665, 433);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btSair);
-            this.Controls.Add(this.btExcluir);
-            this.Controls.Add(this.btLocalizar);
-            this.Controls.Add(this.btNovo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.KeyPreview = true;
@@ -759,15 +656,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -819,26 +707,17 @@
         private System.Windows.Forms.MaskedTextBox maskCnpjCpf;
         private System.Windows.Forms.TextBox txtRoteiro;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btNovo;
-        private System.Windows.Forms.Button btLocalizar;
-        private System.Windows.Forms.Button btExcluir;
-        private System.Windows.Forms.Button btSair;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.MaskedTextBox maskData;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.MaskedTextBox maskDataNasc;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.MaskedTextBox txtIE;
+        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

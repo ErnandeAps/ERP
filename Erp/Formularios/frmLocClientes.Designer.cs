@@ -30,20 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLocClientes));
             this.dtGrid = new System.Windows.Forms.DataGridView();
-            this.cbTipo = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.mskCriterio = new System.Windows.Forms.MaskedTextBox();
-            this.BtnPcnpj = new System.Windows.Forms.Button();
             this.lbTipo = new System.Windows.Forms.Label();
-            this.btSelecao = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
+            this.btnVisualizar = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtGrid
@@ -52,12 +51,74 @@
             this.dtGrid.AllowUserToDeleteRows = false;
             this.dtGrid.AllowUserToOrderColumns = true;
             this.dtGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGrid.Location = new System.Drawing.Point(12, 184);
+            this.dtGrid.Location = new System.Drawing.Point(12, 100);
             this.dtGrid.Name = "dtGrid";
             this.dtGrid.ReadOnly = true;
-            this.dtGrid.Size = new System.Drawing.Size(986, 414);
+            this.dtGrid.Size = new System.Drawing.Size(986, 437);
             this.dtGrid.TabIndex = 0;
             this.dtGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGrid_CellContentClick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnFiltrar);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.btnSair);
+            this.panel1.Controls.Add(this.btnVisualizar);
+            this.panel1.Controls.Add(this.btnClientes);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1009, 94);
+            this.panel1.TabIndex = 23;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.BackColor = System.Drawing.Color.White;
+            this.btnFiltrar.FlatAppearance.BorderSize = 0;
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrar.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltrar.Image")));
+            this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFiltrar.Location = new System.Drawing.Point(766, 8);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(74, 78);
+            this.btnFiltrar.TabIndex = 25;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFiltrar.UseVisualStyleBackColor = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.mskCriterio);
+            this.groupBox1.Controls.Add(this.lbTipo);
+            this.groupBox1.Controls.Add(this.cbTipo);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(240, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(520, 78);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtrar";
+            // 
+            // mskCriterio
+            // 
+            this.mskCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskCriterio.Location = new System.Drawing.Point(154, 31);
+            this.mskCriterio.Name = "mskCriterio";
+            this.mskCriterio.Size = new System.Drawing.Size(353, 26);
+            this.mskCriterio.TabIndex = 22;
+            // 
+            // lbTipo
+            // 
+            this.lbTipo.AutoSize = true;
+            this.lbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTipo.Location = new System.Drawing.Point(151, 16);
+            this.lbTipo.Name = "lbTipo";
+            this.lbTipo.Size = new System.Drawing.Size(60, 13);
+            this.lbTipo.TabIndex = 23;
+            this.lbTipo.Text = "Digite aqui:";
             // 
             // cbTipo
             // 
@@ -77,67 +138,39 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "TIPO";
             // 
-            // groupBox1
+            // btnSair
             // 
-            this.groupBox1.Controls.Add(this.mskCriterio);
-            this.groupBox1.Controls.Add(this.BtnPcnpj);
-            this.groupBox1.Controls.Add(this.lbTipo);
-            this.groupBox1.Controls.Add(this.cbTipo);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Location = new System.Drawing.Point(12, 100);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(556, 78);
-            this.groupBox1.TabIndex = 20;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtrar";
+            this.btnSair.BackColor = System.Drawing.Color.White;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSair.Location = new System.Drawing.Point(166, 3);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(69, 82);
+            this.btnSair.TabIndex = 4;
+            this.btnSair.Text = "Sair";
+            this.btnSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // mskCriterio
+            // btnVisualizar
             // 
-            this.mskCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskCriterio.Location = new System.Drawing.Point(154, 31);
-            this.mskCriterio.Name = "mskCriterio";
-            this.mskCriterio.Size = new System.Drawing.Size(353, 26);
-            this.mskCriterio.TabIndex = 22;
-            // 
-            // BtnPcnpj
-            // 
-            this.BtnPcnpj.Location = new System.Drawing.Point(513, 27);
-            this.BtnPcnpj.Name = "BtnPcnpj";
-            this.BtnPcnpj.Size = new System.Drawing.Size(30, 30);
-            this.BtnPcnpj.TabIndex = 24;
-            this.BtnPcnpj.UseVisualStyleBackColor = true;
-            this.BtnPcnpj.Click += new System.EventHandler(this.BtnPcnpj_Click);
-            // 
-            // lbTipo
-            // 
-            this.lbTipo.AutoSize = true;
-            this.lbTipo.Location = new System.Drawing.Point(151, 16);
-            this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(37, 13);
-            this.lbTipo.TabIndex = 23;
-            this.lbTipo.Text = "CNPJ:";
-            // 
-            // btSelecao
-            // 
-            this.btSelecao.Location = new System.Drawing.Point(839, 108);
-            this.btSelecao.Name = "btSelecao";
-            this.btSelecao.Size = new System.Drawing.Size(127, 37);
-            this.btSelecao.TabIndex = 21;
-            this.btSelecao.Text = "Selecionar";
-            this.btSelecao.UseVisualStyleBackColor = true;
-            this.btSelecao.Click += new System.EventHandler(this.btSelecao_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnSair);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.btnClientes);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1000, 94);
-            this.panel1.TabIndex = 23;
+            this.btnVisualizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVisualizar.FlatAppearance.BorderSize = 0;
+            this.btnVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisualizar.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnVisualizar.Image")));
+            this.btnVisualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnVisualizar.Location = new System.Drawing.Point(78, 3);
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.Size = new System.Drawing.Size(82, 82);
+            this.btnVisualizar.TabIndex = 2;
+            this.btnVisualizar.Text = "Visualizar";
+            this.btnVisualizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVisualizar.UseVisualStyleBackColor = false;
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // btnClientes
             // 
@@ -156,47 +189,13 @@
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(78, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(69, 82);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Excluir";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // btnSair
-            // 
-            this.btnSair.BackColor = System.Drawing.Color.White;
-            this.btnSair.FlatAppearance.BorderSize = 0;
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSair.Location = new System.Drawing.Point(153, 3);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(69, 82);
-            this.btnSair.TabIndex = 4;
-            this.btnSair.Text = "Sair";
-            this.btnSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
             // frmLocClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 610);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1009, 545);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btSelecao);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtGrid);
             this.KeyPreview = true;
             this.Name = "frmLocClientes";
@@ -205,9 +204,9 @@
             this.Load += new System.EventHandler(this.frmLocClientes_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmLocClientes_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dtGrid)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -215,16 +214,15 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtGrid;
-        private System.Windows.Forms.ComboBox cbTipo;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.MaskedTextBox mskCriterio;
-        private System.Windows.Forms.Button BtnPcnpj;
-        private System.Windows.Forms.Label lbTipo;
-        private System.Windows.Forms.Button btSelecao;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnVisualizar;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.MaskedTextBox mskCriterio;
+        private System.Windows.Forms.Label lbTipo;
+        private System.Windows.Forms.ComboBox cbTipo;
+        private System.Windows.Forms.Label label10;
     }
 }

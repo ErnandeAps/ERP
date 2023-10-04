@@ -63,10 +63,10 @@ namespace Erp
                 try
                 {
                     string mSQL = "INSERT into clientes (tipo, Cnpj, Nome, Fantasia, Logradouro, Numero, Bairro, Municipio, Uf, Cep, Email, Contato," +
-                    " Telefone, Celular, Data, Roteiro) Values('" + clientes.Tipo + "','" + clientes.Cnpj + "','" + clientes.Nome + "','" + clientes.Fantasia + "','" + 
-                    clientes.Logradouro + "','" + clientes.Numero + "','" + clientes.Bairro + "','" + clientes.Municipio + "','" + clientes.Uf + "','" + 
-                    clientes.Cep + "','" + clientes.Email + "','" + clientes.Contato + "','" + clientes.Telefone + "','" + clientes.Celular + "','" + 
-                    clientes.Data + "','" + clientes.Roteiro + "')";
+                    " Telefone, Celular, Data, Roteiro) Values('" + clientes.ATIVO + "','" + clientes.CGC + "','" + clientes.RAZAO + "','" + clientes.FANTASIA + "','" + 
+                    clientes.ENDER + "','" + clientes.NUMERO + "','" + clientes.BAIRRO + "','" + clientes.CIDADE + "','" + clientes.UF + "','" + 
+                    clientes.CEP + "','" + clientes.EMAIL + "','" + clientes.CONTATO + "','" + clientes.FONE + "','" + clientes.CELULAR + "','" + 
+                    clientes.CADASTRO + "','" + clientes.OBS + "')";
                    // MySqlCommand cmd = new MySqlCommand(mSQL,Conexao.AbrirConexao());
                    // cmd.ExecuteNonQuery();
                     
@@ -196,10 +196,10 @@ namespace Erp
             {
                 try
                 {  
-                    string mSQL = "UPDATE clientes SET tipo='" + clientes.Tipo + "', cnpj='" + clientes.Cnpj + "', Nome='" + clientes.Nome + "', Fantasia='" + clientes.Fantasia + "'," +
-                    "Logradouro='" + clientes.Logradouro + "', Numero='" + clientes.Numero + "', Bairro='" + clientes.Bairro + "', Municipio='" + clientes.Municipio + "'," +
-                    "Uf='" + clientes.Uf + "', Cep='" + clientes.Cep + "', Email='" + clientes.Email + "', Contato='" + clientes.Contato + "', Telefone='" + clientes.Telefone + "'," +
-                    "Celular='" + clientes.Celular + "', Roteiro='" + clientes.Roteiro + "' WHERE id=" + clientes.ID +"";
+                    string mSQL = "UPDATE clientes SET tipo='" + clientes.ATIVO + "', cnpj='" + clientes.CGC + "', Nome='" + clientes.RAZAO + "', Fantasia='" + clientes.FANTASIA + "'," +
+                    "Logradouro='" + clientes.ENDER + "', Numero='" + clientes.NUMERO + "', Bairro='" + clientes.BAIRRO + "', Municipio='" + clientes.CIDADE + "'," +
+                    "Uf='" + clientes.UF + "', Cep='" + clientes.CEP + "', Email='" + clientes.EMAIL + "', Contato='" + clientes.CONTATO + "', Telefone='" + clientes.FONE + "'," +
+                    "Celular='" + clientes.CELULAR + "', Roteiro='" + clientes.OBS + "' WHERE id=" + clientes.ID_CADASTRO +"";
                     
                     //MySqlCommand cmd = new MySqlCommand(mSQL, Conexao.AbrirConexao());
                     //cmd.ExecuteNonQuery();
@@ -233,23 +233,23 @@ namespace Erp
             //adapter.Fill(dataTable);
 
             Clientes clientes = new Clientes();
-            clientes.ID = Convert.ToInt32( dataTable.Rows[0]["id"].ToString());
-            clientes.Tipo = dataTable.Rows[0]["tipo"].ToString();
-            clientes.Cnpj = dataTable.Rows[0]["cnpj"].ToString();
-            clientes.Nome = dataTable.Rows[0]["nome"].ToString();
-            clientes.Fantasia = dataTable.Rows[0]["fantasia"].ToString();
-            clientes.Logradouro = dataTable.Rows[0]["logradouro"].ToString();
-            clientes.Numero = dataTable.Rows[0]["numero"].ToString();
-            clientes.Bairro = dataTable.Rows[0]["bairro"].ToString();
-            clientes.Municipio = dataTable.Rows[0]["municipio"].ToString();
-            clientes.Uf = dataTable.Rows[0]["uf"].ToString();
-            clientes.Cep = dataTable.Rows[0]["cep"].ToString();
-            clientes.Email = dataTable.Rows[0]["email"].ToString();
-            clientes.Contato = dataTable.Rows[0]["contato"].ToString();
-            clientes.Telefone = dataTable.Rows[0]["telefone"].ToString();
-            clientes.Celular = dataTable.Rows[0]["celular"].ToString();
-            clientes.Data = dataTable.Rows[0]["data"].ToString();
-            clientes.Roteiro = dataTable.Rows[0]["roteiro"].ToString();
+            clientes.ID_CADASTRO = Convert.ToInt32( dataTable.Rows[0]["id"].ToString());
+            clientes.ATIVO = dataTable.Rows[0]["tipo"].ToString();
+            clientes.CGC = dataTable.Rows[0]["cnpj"].ToString();
+            clientes.RAZAO = dataTable.Rows[0]["nome"].ToString();
+            clientes.FANTASIA = dataTable.Rows[0]["fantasia"].ToString();
+            clientes.ENDER = dataTable.Rows[0]["logradouro"].ToString();
+            clientes.NUMERO = dataTable.Rows[0]["numero"].ToString();
+            clientes.BAIRRO = dataTable.Rows[0]["bairro"].ToString();
+            clientes.CIDADE = dataTable.Rows[0]["municipio"].ToString();
+            clientes.UF = dataTable.Rows[0]["uf"].ToString();
+            clientes.CEP = dataTable.Rows[0]["cep"].ToString();
+            clientes.EMAIL = dataTable.Rows[0]["email"].ToString();
+            clientes.CONTATO = dataTable.Rows[0]["contato"].ToString();
+            clientes.FONE = dataTable.Rows[0]["telefone"].ToString();
+            clientes.CELULAR = dataTable.Rows[0]["celular"].ToString();
+            clientes.CADASTRO = dataTable.Rows[0]["data"].ToString();
+            clientes.OBS = dataTable.Rows[0]["roteiro"].ToString();
 
             //Conexao.FecharConexao();
             return clientes;
@@ -302,7 +302,7 @@ namespace Erp
             try
             {
                 
-                string mSQL = "DELETE FROM clientes WHERE id=" + clientes.ID;
+                string mSQL = "DELETE FROM clientes WHERE id=" + clientes.ID_CADASTRO;
                 //MySqlCommand cmd = new MySqlCommand(mSQL, Conexao.AbrirConexao());
                // cmd.ExecuteNonQuery();
             }catch(Exception e)

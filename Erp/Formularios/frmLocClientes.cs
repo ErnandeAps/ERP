@@ -16,10 +16,10 @@ namespace Erp
     public partial class frmLocClientes : Form
     {
                        
-       public string strId;
+       public string strID_CADASTRO;
        public string Parametro
         {
-            get { return strId; }
+            get { return strID_CADASTRO; }
         }
         
         public frmLocClientes()
@@ -76,7 +76,7 @@ namespace Erp
         {
 
             Controls.Add(dtGrid);
-            dtGrid.Size = new Size(986, 414);
+            dtGrid.Size = new Size(986, 437);
 
             dtGrid.ColumnCount = 9;
             DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
@@ -159,44 +159,12 @@ namespace Erp
 
         private void BtnPcnpj_Click(object sender, EventArgs e)
         {
-            if (mskCriterio.Text == "")
-            {
-                lodDataGrid("Select id, Cnpj, Nome, fantasia from clientes where id>0");
-            }
-            else
-            {
-                switch (cbTipo.Text)
-                {
-                case "Cnpj/Cpf":
-                        lodDataGrid("Select id, Cnpj, Nome, fantasia from clientes where cnpj='" + mskCriterio.Text + "'");
-                    break;
-
-                case "Nome/Razão":
-                    lodDataGrid("Select id, Cnpj, Nome, fantasia from clientes where Nome like '" + mskCriterio.Text + "%'");
-                    break;
-
-                case "Nome Fantisia":
-                    lodDataGrid("Select id, Cnpj, Nome, fantasia from clientes where Fantasia like'" + mskCriterio.Text + "%'");
-                    break;
-
-                case "Endereço":
-                    lodDataGrid("Select id, Cnpj, Nome, fantasia from clientes where Logradouro like'" + mskCriterio.Text + "%'");
-                    break;
-
-                case "Fone":
-                    lodDataGrid("Select id, Cnpj, Nome, fantasia from clientes where Telefone like'" + mskCriterio.Text + "%'");
-                    break;
-
-                default:
-                    Console.WriteLine("Default case");
-                    break;
-                }
-            }
+          
         }
 
         private void dtGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            strId = dtGrid.CurrentRow.Cells[0].Value.ToString();
+            strID_CADASTRO = dtGrid.CurrentRow.Cells[0].Value.ToString();
             
 
         }
@@ -204,8 +172,7 @@ namespace Erp
         private void btSelecao_Click(object sender, EventArgs e)
         {
             
-            strId = dtGrid.CurrentRow.Cells[0].Value.ToString();
-            this.Close();
+         
         }
 
         private void frmLocClientes_KeyDown(object sender, KeyEventArgs e)
@@ -227,6 +194,15 @@ namespace Erp
         {
             FrmCadCliente frm = new FrmCadCliente();
             frm.Show();
+        }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            strID_CADASTRO = dtGrid.CurrentRow.Cells[0].Value.ToString();
+            Clientes clientes = new Clientes();
+            //clientes = (Clientes)Funcoes_db.db_LocalizarDadosClientes(addfrm.Parametro);
+
+            this.Close();
         }
     }
 }

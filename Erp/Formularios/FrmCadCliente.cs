@@ -66,17 +66,16 @@ namespace Erp
 
                         try
                         {
-                            maskCnpjCpf.Text = empresa.Cnpj;
-                            txtNome.Text = empresa.Nome;
-                            txtFantasia.Text = empresa.Fantasia;
-                            txtEnd.Text = empresa.Logradouro;
-                            txtNum.Text = empresa.Numero;
-                            txtEnd.Text = empresa.Logradouro;
-                            txtBairro.Text = empresa.Bairro;
-                            txtCidade.Text = empresa.Municipio;
-                            txtUf.Text = empresa.Uf;
-                            txtCep.Text = empresa.Cep;
-                            txtEmail.Text = empresa.Email;
+                            maskCnpjCpf.Text = empresa.CGC;
+                            txtNome.Text = empresa.RAZAO;
+                            txtFantasia.Text = empresa.FANTASIA;
+                            txtEnd.Text = empresa.ENDER;
+                            txtNum.Text = empresa.NUMERO;        
+                            txtBairro.Text = empresa.BAIRRO;
+                            txtCidade.Text = empresa.CIDADE;
+                            txtUf.Text = empresa.UF;
+                            txtCep.Text = empresa.CEP;
+                            txtEmail.Text = empresa.EMAIL;
 
                         }
                         catch (System.Exception ex)
@@ -151,12 +150,12 @@ namespace Erp
             try
             {
              
-                switch (btNovo.Text)
+                switch (btnSalvar.Text)
                 {
                 case "Novo":
                     
                         cmdLimpar();
-                        btNovo.Text = "Salvar";
+                        btnSalvar.Text = "Salvar";
                         cbTipo.Focus();
                         
                         break;
@@ -203,8 +202,8 @@ namespace Erp
             }
             string DataFormato = data.ToString("d");
             maskData.Text = DataFormato;
-            btExcluir.Enabled = false;
-            btNovo.Text = "Novo";
+            btnExcluir.Enabled = false;
+            btnSalvar.Text = "Novo";
             txtId.Focus();
         }
         
@@ -231,35 +230,28 @@ namespace Erp
         private void preencheDados(Clientes cli)
         {
             cmdLimpar();
-            txtId.Text = cli.ID.ToString();
-            cbTipo.Text = cli.Tipo;
-            maskCnpjCpf.Text = cli.Cnpj;
-            txtNome.Text = cli.Nome;
-            txtFantasia.Text = cli.Fantasia;
-            txtEnd.Text = cli.Logradouro;
-            txtNum.Text = cli.Numero;
-            txtBairro.Text = cli.Bairro;
-            txtCidade.Text = cli.Municipio;
-            txtUf.Text = cli.Uf;
-            txtCep.Text = cli.Cep;
-            txtEmail.Text = cli.Email;
-            txtContato.Text = cli.Contato;
-            maskFone.Text = cli.Telefone;
-            maskCelular.Text = cli.Celular;
-            txtRoteiro.Text = cli.Roteiro;
+            txtId.Text = cli.ID_CADASTRO.ToString();
+            //cbTipo.Text = cli.ATIVO;
+            maskCnpjCpf.Text = cli.CGC;
+            txtNome.Text = cli.RAZAO;
+            txtFantasia.Text = cli.FANTASIA;
+            txtEnd.Text = cli.ENDER;
+            txtNum.Text = cli.NUMERO;
+            txtBairro.Text = cli.BAIRRO;
+            txtCidade.Text = cli.CIDADE;
+            txtUf.Text = cli.UF;
+            txtCep.Text = cli.CEP;
+            txtEmail.Text = cli.EMAIL;
+            txtContato.Text = cli.CONTATO;
+            maskFone.Text = cli.FONE;
+            maskCelular.Text = cli.CELULAR;
+            txtRoteiro.Text = cli.OBS;
         }
 
 
         private void btSair_Click(object sender, EventArgs e)
         {
-            if (txtId.Text == "")
-            {
-                this.Close();
-            }
-            else
-            {
-                cmdLimpar();
-            }
+           
         }
 
         private void btExcluir_Click(object sender, EventArgs e)
@@ -285,24 +277,24 @@ namespace Erp
         {
             Clientes clientes = new Clientes();
             if (txtId.Text!="")
-                clientes.ID = Convert.ToInt32(txtId.Text);
+                clientes.ID_CADASTRO = Convert.ToInt32(txtId.Text);
             
-            clientes.Tipo = cbTipo.Text;
-            clientes.Cnpj = maskCnpjCpf.Text;
-            clientes.Nome = txtNome.Text;
-            clientes.Fantasia = txtFantasia.Text;
-            clientes.Logradouro = txtEnd.Text;
-            clientes.Numero = txtNum.Text;
-            clientes.Bairro = txtBairro.Text;
-            clientes.Municipio = txtCidade.Text;
-            clientes.Uf = txtUf.Text;
-            clientes.Cep = txtCep.Text;
-            clientes.Email = txtEmail.Text;
-            clientes.Contato = txtContato.Text;
-            clientes.Telefone = maskFone.Text;
-            clientes.Celular = maskCelular.Text;
-            clientes.Data = maskData.Text;
-            clientes.Roteiro = txtRoteiro.Text;
+            //clientes.ATIVO = cbTipo.Text;
+            clientes.CGC = maskCnpjCpf.Text;
+            clientes.RAZAO = txtNome.Text;
+            clientes.FANTASIA = txtFantasia.Text;
+            clientes.ENDER = txtEnd.Text;
+            clientes.NUMERO = txtNum.Text;
+            clientes.BAIRRO = txtBairro.Text;
+            clientes.CIDADE = txtCidade.Text;
+            clientes.UF = txtUf.Text;
+            clientes.CEP = txtCep.Text;
+            clientes.EMAIL = txtEmail.Text;
+            clientes.CONTATO = txtContato.Text;
+            clientes.FONE = maskFone.Text;
+            clientes.CELULAR = maskCelular.Text;
+           // clientes.CADASTRO = maskData.Text;
+            clientes.OBS = txtRoteiro.Text;
             return clientes;
         }
 
@@ -311,12 +303,12 @@ namespace Erp
             try
             {
 
-                switch (btNovo.Text)
+                switch (btnSalvar.Text)
                 {
                     case "Novo":
 
                         cmdLimpar();
-                        btNovo.Text = "Salvar";
+                        btnSalvar.Text = "Salvar";
                         cbTipo.Focus();
 
                         break;
@@ -431,12 +423,12 @@ namespace Erp
             try
             {
 
-                switch (btNovo.Text)
+                switch (btnSalvar.Text)
                 {
                     case "Novo":
 
                         cmdLimpar();
-                        btNovo.Text = "Salvar";
+                        btnSalvar.Text = "Salvar";
                         cbTipo.Focus();
 
                         break;
@@ -479,6 +471,64 @@ namespace Erp
         {
 
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            int codigo = Convert.ToInt32(txtId.Text);
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Tem certeza que deseja excluir este registro?", "Assistente de exclesão", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Funcoes_db.db_ExcluirDados((Clientes)loadClientes());
+                    MessageBox.Show("Registro excluído com sucesso !", "Alterar", MessageBoxButtons.OK);
+                    cmdLimpar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "")
+            {
+                this.Close();
+            }
+            else
+            {
+                cmdLimpar();
+            }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtNome.Text == "")
+                {
+                    MessageBox.Show("Obrigatório o preenchimento do Nome do Cliente.", "Alterar", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    if (txtId.Text =="")
+                    {
+                        Funcoes_db.db_InserirDados((Clientes)loadClientes());
+                        MessageBox.Show("Registro inserido com sucesso !", "Inserir", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        Funcoes_db.db_AlterarDados((Clientes)loadClientes());
+                        MessageBox.Show("Registro atualizado com sucesso !", "Atualizar", MessageBoxButtons.OK);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK);
+            }
+        }
     }
-    
-}
+    }

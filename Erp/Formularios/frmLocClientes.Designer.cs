@@ -87,6 +87,7 @@
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFiltrar.UseVisualStyleBackColor = false;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // groupBox1
             // 
@@ -127,6 +128,7 @@
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(133, 21);
             this.cbTipo.TabIndex = 1;
+            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged_1);
             // 
             // label10
             // 
@@ -146,9 +148,9 @@
             this.btnSair.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSair.Location = new System.Drawing.Point(166, 3);
+            this.btnSair.Location = new System.Drawing.Point(127, 3);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(69, 82);
+            this.btnSair.Size = new System.Drawing.Size(60, 82);
             this.btnSair.TabIndex = 4;
             this.btnSair.Text = "Sair";
             this.btnSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -163,11 +165,11 @@
             this.btnVisualizar.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnVisualizar.Image")));
             this.btnVisualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVisualizar.Location = new System.Drawing.Point(78, 3);
+            this.btnVisualizar.Location = new System.Drawing.Point(65, 3);
             this.btnVisualizar.Name = "btnVisualizar";
-            this.btnVisualizar.Size = new System.Drawing.Size(82, 82);
+            this.btnVisualizar.Size = new System.Drawing.Size(60, 82);
             this.btnVisualizar.TabIndex = 2;
-            this.btnVisualizar.Text = "Visualizar";
+            this.btnVisualizar.Text = "Exibir";
             this.btnVisualizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVisualizar.UseVisualStyleBackColor = false;
             this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
@@ -182,7 +184,7 @@
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnClientes.Location = new System.Drawing.Point(3, 3);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(69, 82);
+            this.btnClientes.Size = new System.Drawing.Size(60, 82);
             this.btnClientes.TabIndex = 1;
             this.btnClientes.Text = "Inserir";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;

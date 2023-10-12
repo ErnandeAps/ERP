@@ -82,14 +82,18 @@ namespace Erp
 
         }
 
-        private void btnVendas_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnRelatorios_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnMovimentacao_Click(object sender, EventArgs e)
+        {FrmMovimentacao frm = new FrmMovimentacao ();
+            frm.TopLevel = false;
+            pnlPrincipal.Controls.Add(frm);
+            frm.Show();
         }
     }
 }

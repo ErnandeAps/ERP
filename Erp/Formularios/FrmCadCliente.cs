@@ -18,13 +18,26 @@ namespace Erp
     {
         string URI = "";
         DateTime data = DateTime.Now;
-        
-        public FrmCadCliente()
+        public string strID_CADASTRO;
+         /*
+        public FrmCadCliente(string parametro) : this()
         {
+             strID_CADASTRO = parametro;
+        }
+         
+        public string Parametro
+        {
+            get { return Parametro; }
+        }
+         */
+
+        public FrmCadCliente(string Parametro)
+        {
+            strID_CADASTRO = Parametro;
             InitializeComponent();
             string DataFormato = data.ToString("d");
             maskData.Text = DataFormato;
-
+            loadCadastro();
         }
 
         
@@ -67,12 +80,12 @@ namespace Erp
                         try
                         {
                             maskCnpjCpf.Text = empresa.CGC;
-                            txtNome.Text = empresa.RAZAO;
+                            txtNome.Text = empresa.NOME ;
                             txtFantasia.Text = empresa.FANTASIA;
-                            txtEnd.Text = empresa.ENDER;
+                            txtEnd.Text = empresa.LOGRADOURO;
                             txtNum.Text = empresa.NUMERO;        
                             txtBairro.Text = empresa.BAIRRO;
-                            txtCidade.Text = empresa.CIDADE;
+                            txtCidade.Text = empresa.MUNICIPIO ;
                             txtUf.Text = empresa.UF;
                             txtCep.Text = empresa.CEP;
                             txtEmail.Text = empresa.EMAIL;
@@ -233,12 +246,12 @@ namespace Erp
             txtId.Text = cli.ID_CADASTRO.ToString();
             //cbTipo.Text = cli.ATIVO;
             maskCnpjCpf.Text = cli.CGC;
-            txtNome.Text = cli.RAZAO;
+            txtNome.Text = cli.NOME;
             txtFantasia.Text = cli.FANTASIA;
-            txtEnd.Text = cli.ENDER;
+            txtEnd.Text = cli.LOGRADOURO ;
             txtNum.Text = cli.NUMERO;
             txtBairro.Text = cli.BAIRRO;
-            txtCidade.Text = cli.CIDADE;
+            txtCidade.Text = cli.MUNICIPIO ;
             txtUf.Text = cli.UF;
             txtCep.Text = cli.CEP;
             txtEmail.Text = cli.EMAIL;
@@ -281,12 +294,12 @@ namespace Erp
             
             //clientes.ATIVO = cbTipo.Text;
             clientes.CGC = maskCnpjCpf.Text;
-            clientes.RAZAO = txtNome.Text;
+            clientes.NOME  = txtNome.Text;
             clientes.FANTASIA = txtFantasia.Text;
-            clientes.ENDER = txtEnd.Text;
+            clientes.LOGRADOURO  = txtEnd.Text;
             clientes.NUMERO = txtNum.Text;
             clientes.BAIRRO = txtBairro.Text;
-            clientes.CIDADE = txtCidade.Text;
+            clientes.MUNICIPIO  = txtCidade.Text;
             clientes.UF = txtUf.Text;
             clientes.CEP = txtCep.Text;
             clientes.EMAIL = txtEmail.Text;
@@ -528,6 +541,23 @@ namespace Erp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK);
+            }
+        }
+
+        private void loadCadastro()
+        {
+            if (strID_CADASTRO=="")
+            {
+                cmdLimpar();
+            }
+            else
+            {
+                Clientes clientes = new Clientes();
+                clientes = (Clientes)Funcoes_db.db_LocalizarDadosClientes(strID_CADASTRO);
+               preencheDados(clientes);
+                    //btNovo.Text = "Atualizar";
+                    //btExcluir.Enabled = true;
+               
             }
         }
     }

@@ -36,7 +36,8 @@ namespace Erp
 
         public void loadCbTipo()
         {
-            cbTipo.Items.Add("Cnpj/Cpf");
+            cbTipo.Items.Add("Cnpj");
+            cbTipo.Items.Add("Cpf");
             cbTipo.Items.Add("Nome/Razão");
             cbTipo.Items.Add("Nome Fantisia");
             cbTipo.Items.Add("Endereço");
@@ -147,6 +148,7 @@ namespace Erp
 
                     }
                 }
+
             }catch(Exception)
             {
                 MessageBox.Show("Não foi possível se conectar ao banco");
@@ -192,17 +194,98 @@ namespace Erp
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            FrmCadCliente frm = new FrmCadCliente();
-            frm.Show();
+            strID_CADASTRO = "";
+            FrmCadCliente frm = new FrmCadCliente(strID_CADASTRO);
+            frm.ShowDialog();
+
         }
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
+                        
             strID_CADASTRO = dtGrid.CurrentRow.Cells[0].Value.ToString();
             Clientes clientes = new Clientes();
-            //clientes = (Clientes)Funcoes_db.db_LocalizarDadosClientes(addfrm.Parametro);
+            //using (var addfrm = new FrmCadCliente(strID_CADASTRO))
 
-            this.Close();
+            FrmCadCliente addfrm = new FrmCadCliente(strID_CADASTRO);
+            
+            addfrm.ShowDialog();
+
+            //using (var form2 = new Form2(textBoxParametro.Text))
+            
+
+
+
+            //clientes = (Clientes)Funcoes_db.db_LocalizarDadosClientes(addfrm.Parametro);
+            //preencheDados(clientes);
+            //btNovo.Text = "Atualizar";
+            //btExcluir.Enabled = true;
+
+
+
+        }
+
+        private void cbTipo_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+           switch(cbTipo.Text)
+            {
+                case "Cnpj":
+                    mskCriterio.Mask = "99,999,999/9999-99";
+                    mskCriterio.Size  = new Size(170, 26);
+                    break;
+
+                case "Cpf":
+                    mskCriterio.Mask = "999,999,999-99";
+                    mskCriterio.Size = new Size(120, 26);
+                    break;
+
+
+                default:
+                    mskCriterio.Mask = ""
+;                   mskCriterio.Size = new Size(353, 26);
+                    break;
+            }
+                        
+            mskCriterio.Focus();
+
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (mskCriterio.Text == "")
+            {
+                lodDataGrid("Select ID_CADASTRO, CGC, RAZAO, FANTASIA, IE, ENDER, NUMERO, BAIRRO, CIDADE from CADASTRO where ID_CADASTRO>0");
+            }
+            else
+            {
+                switch (cbTipo.Text)
+                {
+                    case "Cnpj":
+                        lodDataGrid("Select ID_CADASTRO, CGC, RAZAO, FANTASIA, IE, ENDER, NUMERO, BAIRRO, CIDADE from CADASTRO where CGC='" + mskCriterio.Text + "'");
+                        break;
+
+                    case "Nome/Razão":
+                        lodDataGrid("Select ID_CADASTRO, CGC, RAZAO, FANTASIA, IE, ENDER, NUMERO, BAIRRO, CIDADE from CADASTRO where RAZAO like '" + mskCriterio.Text + "%'");
+                        break;
+
+                    case "Nome Fantisia":
+                        lodDataGrid("Select ID_CADASTRO, CGC, RAZAO, FANTASIA, IE, ENDER, NUMERO, BAIRRO, CIDADE from CADASTRO where FANTASIA like'" + mskCriterio.Text + "%'");
+                        break;
+
+                    case "Endereço":
+                        lodDataGrid("Select ID_CADASTRO, CGC, RAZAO, FANTASIA, IE, ENDER, NUMERO, BAIRRO, CIDADE from CADASTRO where ENDER like'" + mskCriterio.Text + "%'");
+                        break;
+
+                    case "Fone":
+                        lodDataGrid("Select ID_CADASTRO, CGC, RAZAO, FANTASIA, IE, ENDER, NUMERO, BAIRRO, CIDADE from CADASTRO where FONE like'" + mskCriterio.Text + "%'");
+                        break;
+
+                    default:
+
+                        Console.WriteLine("Default case");
+                        break;
+                }
+            }
         }
     }
 }

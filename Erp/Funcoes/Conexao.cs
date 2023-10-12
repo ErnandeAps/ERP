@@ -13,7 +13,6 @@ namespace Erp
     public class ConexaoFb
     {
 
-        //public static MySqlConnection con = new MySqlConnection("server = localhost; user id=userdb; password=(Suporte) ; database = autopecas");
         public static readonly ConexaoFb instanciaFireBird = new ConexaoFb();
         private ConexaoFb() { }
 
@@ -27,8 +26,6 @@ namespace Erp
             string conn = ConfigurationManager.ConnectionStrings["FireBirdConnectionString"].ToString();
             return new FbConnection(conn);
         }
-        
-
     }
 }
         

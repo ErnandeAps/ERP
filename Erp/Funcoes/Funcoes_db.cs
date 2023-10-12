@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using Erp;
+using FirebirdSql.Data.FirebirdClient;
+
 
 namespace Erp
 {
@@ -63,8 +64,8 @@ namespace Erp
                 try
                 {
                     string mSQL = "INSERT into clientes (tipo, Cnpj, Nome, Fantasia, Logradouro, Numero, Bairro, Municipio, Uf, Cep, Email, Contato," +
-                    " Telefone, Celular, Data, Roteiro) Values('" + clientes.ATIVO + "','" + clientes.CGC + "','" + clientes.RAZAO + "','" + clientes.FANTASIA + "','" + 
-                    clientes.ENDER + "','" + clientes.NUMERO + "','" + clientes.BAIRRO + "','" + clientes.CIDADE + "','" + clientes.UF + "','" + 
+                    " Telefone, Celular, Data, Roteiro) Values('" + clientes.ATIVO + "','" + clientes.CGC + "','" + clientes.NOME + "','" + clientes.FANTASIA + "','" + 
+                    clientes.LOGRADOURO  + "','" + clientes.NUMERO + "','" + clientes.BAIRRO + "','" + clientes.MUNICIPIO  + "','" + clientes.UF + "','" + 
                     clientes.CEP + "','" + clientes.EMAIL + "','" + clientes.CONTATO + "','" + clientes.FONE + "','" + clientes.CELULAR + "','" + 
                     clientes.CADASTRO + "','" + clientes.OBS + "')";
                    // MySqlCommand cmd = new MySqlCommand(mSQL,Conexao.AbrirConexao());
@@ -196,8 +197,8 @@ namespace Erp
             {
                 try
                 {  
-                    string mSQL = "UPDATE clientes SET tipo='" + clientes.ATIVO + "', cnpj='" + clientes.CGC + "', Nome='" + clientes.RAZAO + "', Fantasia='" + clientes.FANTASIA + "'," +
-                    "Logradouro='" + clientes.ENDER + "', Numero='" + clientes.NUMERO + "', Bairro='" + clientes.BAIRRO + "', Municipio='" + clientes.CIDADE + "'," +
+                    string mSQL = "UPDATE clientes SET tipo='" + clientes.ATIVO + "', cnpj='" + clientes.CGC + "', Nome='" + clientes.NOME + "', Fantasia='" + clientes.FANTASIA + "'," +
+                    "Logradouro='" + clientes.LOGRADOURO  + "', Numero='" + clientes.NUMERO + "', Bairro='" + clientes.BAIRRO + "', Municipio='" + clientes.MUNICIPIO  + "'," +
                     "Uf='" + clientes.UF + "', Cep='" + clientes.CEP + "', Email='" + clientes.EMAIL + "', Contato='" + clientes.CONTATO + "', Telefone='" + clientes.FONE + "'," +
                     "Celular='" + clientes.CELULAR + "', Roteiro='" + clientes.OBS + "' WHERE id=" + clientes.ID_CADASTRO +"";
                     
@@ -223,37 +224,133 @@ namespace Erp
 
         public static object db_LocalizarDadosClientes(string id)
         {
-
-            string mSQL ="SELECT * FROM clientes where id=" + id + "";
-            /*
-            MySqlCommand cmd = new MySqlCommand(mSQL, Conexao.AbrirConexao()); 
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-            */
-            DataTable dataTable = new DataTable();
-            //adapter.Fill(dataTable);
-
+            //string mSQL = "Select * from CADASTRO where ID_CADASTRO=" + id + "";
+            string mSQL = "Select ID_CADASTRO, CGC, RAZAO, FANTASIA, IE, ENDER, NUMERO, BAIRRO, CIDADE from CADASTRO where ID_CADASTRO>0";
             Clientes clientes = new Clientes();
-            clientes.ID_CADASTRO = Convert.ToInt32( dataTable.Rows[0]["id"].ToString());
-            clientes.ATIVO = dataTable.Rows[0]["tipo"].ToString();
-            clientes.CGC = dataTable.Rows[0]["cnpj"].ToString();
-            clientes.RAZAO = dataTable.Rows[0]["nome"].ToString();
-            clientes.FANTASIA = dataTable.Rows[0]["fantasia"].ToString();
-            clientes.ENDER = dataTable.Rows[0]["logradouro"].ToString();
-            clientes.NUMERO = dataTable.Rows[0]["numero"].ToString();
-            clientes.BAIRRO = dataTable.Rows[0]["bairro"].ToString();
-            clientes.CIDADE = dataTable.Rows[0]["municipio"].ToString();
-            clientes.UF = dataTable.Rows[0]["uf"].ToString();
-            clientes.CEP = dataTable.Rows[0]["cep"].ToString();
-            clientes.EMAIL = dataTable.Rows[0]["email"].ToString();
-            clientes.CONTATO = dataTable.Rows[0]["contato"].ToString();
-            clientes.FONE = dataTable.Rows[0]["telefone"].ToString();
-            clientes.CELULAR = dataTable.Rows[0]["celular"].ToString();
-            clientes.CADASTRO = dataTable.Rows[0]["data"].ToString();
-            clientes.OBS = dataTable.Rows[0]["roteiro"].ToString();
+            using (FbConnection conexaoFireBird = ConexaoFb.getInstancia().getConexao())
 
-            //Conexao.FecharConexao();
+                try
+                {
+                    conexaoFireBird.Open();
+                    FbCommand cmd = new FbCommand(mSQL, conexaoFireBird);
+                    FbDataReader Resultado = cmd.ExecuteReader();
+                    
+
+                    if (Resultado.HasRows)
+                    {
+                        int num;                        //clientes.ID_CADASTRO = Convert.ToInt32(Resultado[0]["ID_CADASTRO"].ToString());
+                        num = Convert.ToInt32(Resultado[0]);
+                        //dtGrid.Rows.Add(Resultado[0], Resultado[1], Resultado[2], Resultado[3], Resultado[4], Resultado[5], Resultado[6], Resultado[7], Resultado[8]);
+
+                    }
+                   
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Não foi possível se conectar ao banco");
+                }
+                finally
+                {
+                    conexaoFireBird.Close();
+                }
             return clientes;
+
+            /*
+           adapter.Fill(dataTable);
+           clientes.ID_CADASTRO = Convert.ToInt32(dataTable.Rows[0]["ID_CADASTRO"].ToString());
+           clientes.ATIVO = dataTable.Rows[0]["ATIVO"].ToString();
+           clientes.CGC = dataTable.Rows[0]["CGC"].ToString();
+           clientes.RAZAO = dataTable.Rows[0]["RAZAO"].ToString();
+           clientes.FANTASIA = dataTable.Rows[0]["FANTANSIA"].ToString();
+           clientes.ENDER = dataTable.Rows[0]["ENDER"].ToString();
+           clientes.NUMERO = dataTable.Rows[0]["NUMERO"].ToString();
+           clientes.BAIRRO = dataTable.Rows[0]["BAIRRO"].ToString();
+           clientes.CIDADE = dataTable.Rows[0]["CIDADE"].ToString();
+
+            * conexaoFireBird.Open();
+            FbCommand cmd = new FbCommand(mSQL);
+            FbDataAdapter adapter = new FbDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            Clientes clientes = new Clientes();
+            clientes.UF = dataTable.Rows[0]["UF"].ToString();
+            clientes.CEP = dataTable.Rows[0]["CEP"].ToString();
+            clientes.EMAIL = dataTable.Rows[0]["EMAIL"].ToString();
+            clientes.CONTATO = dataTable.Rows[0]["CONATO"].ToString();
+            clientes.FONE = dataTable.Rows[0]["FONE"].ToString();
+            clientes.CELULAR = dataTable.Rows[0]["CELULAR"].ToString();
+            clientes.CADASTRO = dataTable.Rows[0]["CADASTRO"].ToString();
+            clientes.OBS = dataTable.Rows[0]["OBS"].ToString();
+           */
+
+
         }
+        /*
+        string mSQL ="SELECT * FROM CADASTRO where ID_CADASTRO=" + id + "";
+        using (FbConnection conexaoFireBird = ConexaoFb.getInstancia().getConexao())
+
+                conexaoFireBird.Open();
+                FbCommand cmd = new FbCommand(mSQL,);
+                //FbDataReader Resultado = cmd.ExecuteReader();
+                FbDataAdapter adapter = new FbDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+
+                Clientes clientes = new Clientes();
+                clientes.ID_CADASTRO = Convert.ToInt32(dataTable.Rows[0]["ID_CADASTRO"].ToString());
+                clientes.ATIVO = dataTable.Rows[0]["ATIVO"].ToString();
+                clientes.CGC = dataTable.Rows[0]["CGC"].ToString();
+                clientes.RAZAO = dataTable.Rows[0]["RAZAO"].ToString();
+                clientes.FANTASIA = dataTable.Rows[0]["FANTANSIA"].ToString();
+                clientes.ENDER = dataTable.Rows[0]["ENDER"].ToString();
+                clientes.NUMERO = dataTable.Rows[0]["NUMERO"].ToString();
+                clientes.BAIRRO = dataTable.Rows[0]["BAIRRO"].ToString();
+                clientes.CIDADE = dataTable.Rows[0]["CIDADE"].ToString();
+                clientes.UF = dataTable.Rows[0]["UF"].ToString();
+                clientes.CEP = dataTable.Rows[0]["CEP"].ToString();
+                clientes.EMAIL = dataTable.Rows[0]["EMAIL"].ToString();
+                clientes.CONTATO = dataTable.Rows[0]["CONATO"].ToString();
+                clientes.FONE = dataTable.Rows[0]["FONE"].ToString();
+                clientes.CELULAR = dataTable.Rows[0]["CELULAR"].ToString();
+                clientes.CADASTRO = dataTable.Rows[0]["CADASTRO"].ToString();
+                clientes.OBS = dataTable.Rows[0]["OBS"].ToString();
+
+        conexaoFireBird.Close();
+          */
+
+        //conexaoFireBird.Open();
+        //FbCommand cmd = new FbCommand(mSQL, conexaoFireBird);
+        // FbDataReader Resultado = cmd.ExecuteReader();
+        /*
+        MySqlCommand cmd = new MySqlCommand(mSQL, Conexao.AbrirConexao()); 
+        MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+        */
+        //DataTable dataTable = new DataTable();
+        //adapter.Fill(dataTable);
+        /*
+        Clientes clientes = new Clientes();
+        clientes.ID_CADASTRO = Convert.ToInt32( dataTable.Rows[0]["ID_CADASTRO"].ToString());
+        clientes.ATIVO = dataTable.Rows[0]["ATIVO"].ToString();
+        clientes.CGC = dataTable.Rows[0]["CGC"].ToString();
+        clientes.RAZAO = dataTable.Rows[0]["RAZAO"].ToString();
+        clientes.FANTASIA = dataTable.Rows[0]["FANTANSIA"].ToString();
+        clientes.ENDER = dataTable.Rows[0]["ENDER"].ToString();
+        clientes.NUMERO = dataTable.Rows[0]["NUMERO"].ToString();
+        clientes.BAIRRO = dataTable.Rows[0]["BAIRRO"].ToString();
+        clientes.CIDADE = dataTable.Rows[0]["CIDADE"].ToString();
+        clientes.UF = dataTable.Rows[0]["UF"].ToString();
+        clientes.CEP = dataTable.Rows[0]["CEP"].ToString();
+        clientes.EMAIL = dataTable.Rows[0]["EMAIL"].ToString();
+        clientes.CONTATO = dataTable.Rows[0]["CONATO"].ToString();
+        clientes.FONE = dataTable.Rows[0]["FONE"].ToString();
+        clientes.CELULAR = dataTable.Rows[0]["CELULAR"].ToString();
+        clientes.CADASTRO = dataTable.Rows[0]["CADASTRO"].ToString();
+        clientes.OBS = dataTable.Rows[0]["OBS"].ToString();
+
+        //Conexao.FecharConexao();
+        */
+        //return clientes;
+
+    
 
         
         /*

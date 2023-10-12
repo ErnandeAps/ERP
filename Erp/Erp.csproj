@@ -85,8 +85,13 @@
     <Compile Include="Formularios\frmLocClientes.designer.cs">
       <DependentUpon>frmLocClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmMovimentacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmMovimentacao.Designer.cs">
+      <DependentUpon>FrmMovimentacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funcoes\Conexao.cs" />
-    <Compile Include="Funcoes\ConfigConection.cs" />
     <Compile Include="Formularios\FrmTelaCadastros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,7 +100,6 @@
     </Compile>
     <Compile Include="Funcoes\FuncoesDiversas.cs" />
     <Compile Include="Funcoes\Funcoes_db.cs" />
-    <Compile Include="Funcoes\mConn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\FrmCadCliente.resx">
@@ -109,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmTelaCadastros.resx">
       <DependentUpon>FrmTelaCadastros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMovimentacao.resx">
+      <DependentUpon>FrmMovimentacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

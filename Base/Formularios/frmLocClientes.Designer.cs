@@ -29,202 +29,214 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLocClientes));
-            this.dtGrid = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFiltrar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.mskCriterio = new System.Windows.Forms.MaskedTextBox();
-            this.lbTipo = new System.Windows.Forms.Label();
-            this.cbTipo = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.btnVisualizar = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dtGrid)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            dtGrid = new DataGridView();
+            panel1 = new Panel();
+            btnFiltrar = new Button();
+            groupBox1 = new GroupBox();
+            mskCriterio = new MaskedTextBox();
+            lbTipo = new Label();
+            cbTipo = new ComboBox();
+            label10 = new Label();
+            btnSair = new Button();
+            btnVisualizar = new Button();
+            btnClientes = new Button();
+            ((System.ComponentModel.ISupportInitialize)dtGrid).BeginInit();
+            panel1.SuspendLayout();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // dtGrid
             // 
-            this.dtGrid.AllowUserToAddRows = false;
-            this.dtGrid.AllowUserToDeleteRows = false;
-            this.dtGrid.AllowUserToOrderColumns = true;
-            this.dtGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGrid.Location = new System.Drawing.Point(12, 100);
-            this.dtGrid.Name = "dtGrid";
-            this.dtGrid.ReadOnly = true;
-            this.dtGrid.Size = new System.Drawing.Size(986, 437);
-            this.dtGrid.TabIndex = 0;
-            this.dtGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGrid_CellContentClick);
+            dtGrid.AllowUserToAddRows = false;
+            dtGrid.AllowUserToDeleteRows = false;
+            dtGrid.AllowUserToOrderColumns = true;
+            dtGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGrid.Location = new Point(14, 115);
+            dtGrid.Margin = new Padding(4, 3, 4, 3);
+            dtGrid.Name = "dtGrid";
+            dtGrid.ReadOnly = true;
+            dtGrid.Size = new Size(1150, 504);
+            dtGrid.TabIndex = 0;
+            dtGrid.CellContentClick += dtGrid_CellContentClick;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnFiltrar);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.btnSair);
-            this.panel1.Controls.Add(this.btnVisualizar);
-            this.panel1.Controls.Add(this.btnClientes);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1009, 94);
-            this.panel1.TabIndex = 23;
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(btnFiltrar);
+            panel1.Controls.Add(groupBox1);
+            panel1.Controls.Add(btnSair);
+            panel1.Controls.Add(btnVisualizar);
+            panel1.Controls.Add(btnClientes);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1177, 91);
+            panel1.TabIndex = 23;
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.BackColor = System.Drawing.Color.White;
-            this.btnFiltrar.FlatAppearance.BorderSize = 0;
-            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrar.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltrar.Image = ((System.Drawing.Image)(resources.GetObject("btnFiltrar.Image")));
-            this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFiltrar.Location = new System.Drawing.Point(766, 8);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(74, 78);
-            this.btnFiltrar.TabIndex = 25;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFiltrar.UseVisualStyleBackColor = false;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            btnFiltrar.BackColor = Color.White;
+            btnFiltrar.FlatAppearance.BorderSize = 0;
+            btnFiltrar.FlatStyle = FlatStyle.Flat;
+            btnFiltrar.Font = new Font("Franklin Gothic Medium Cond", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFiltrar.Image = (Image)resources.GetObject("btnFiltrar.Image");
+            btnFiltrar.ImageAlign = ContentAlignment.TopCenter;
+            btnFiltrar.Location = new Point(715, 8);
+            btnFiltrar.Margin = new Padding(4, 3, 4, 3);
+            btnFiltrar.Name = "btnFiltrar";
+            btnFiltrar.Size = new Size(70, 74);
+            btnFiltrar.TabIndex = 25;
+            btnFiltrar.Text = "Filtrar";
+            btnFiltrar.TextAlign = ContentAlignment.BottomCenter;
+            btnFiltrar.UseVisualStyleBackColor = false;
+            btnFiltrar.Click += btnFiltrar_Click;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.mskCriterio);
-            this.groupBox1.Controls.Add(this.lbTipo);
-            this.groupBox1.Controls.Add(this.cbTipo);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(240, 8);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(520, 78);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtrar";
+            groupBox1.Controls.Add(mskCriterio);
+            groupBox1.Controls.Add(lbTipo);
+            groupBox1.Controls.Add(cbTipo);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Location = new Point(226, 8);
+            groupBox1.Margin = new Padding(4, 3, 4, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4, 3, 4, 3);
+            groupBox1.Size = new Size(481, 74);
+            groupBox1.TabIndex = 21;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Filtrar";
             // 
             // mskCriterio
             // 
-            this.mskCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskCriterio.Location = new System.Drawing.Point(154, 31);
-            this.mskCriterio.Name = "mskCriterio";
-            this.mskCriterio.Size = new System.Drawing.Size(353, 26);
-            this.mskCriterio.TabIndex = 22;
+            mskCriterio.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            mskCriterio.Location = new Point(180, 29);
+            mskCriterio.Margin = new Padding(4, 3, 4, 3);
+            mskCriterio.Name = "mskCriterio";
+            mskCriterio.Size = new Size(286, 26);
+            mskCriterio.TabIndex = 22;
             // 
             // lbTipo
             // 
-            this.lbTipo.AutoSize = true;
-            this.lbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTipo.Location = new System.Drawing.Point(151, 16);
-            this.lbTipo.Name = "lbTipo";
-            this.lbTipo.Size = new System.Drawing.Size(60, 13);
-            this.lbTipo.TabIndex = 23;
-            this.lbTipo.Text = "Digite aqui:";
+            lbTipo.AutoSize = true;
+            lbTipo.Font = new Font("Franklin Gothic Medium Cond", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lbTipo.Location = new Point(176, 11);
+            lbTipo.Margin = new Padding(4, 0, 4, 0);
+            lbTipo.Name = "lbTipo";
+            lbTipo.Size = new Size(66, 18);
+            lbTipo.TabIndex = 23;
+            lbTipo.Text = "Digite aqui:";
             // 
             // cbTipo
             // 
-            this.cbTipo.FormattingEnabled = true;
-            this.cbTipo.Location = new System.Drawing.Point(15, 36);
-            this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(133, 21);
-            this.cbTipo.TabIndex = 1;
-            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged_1);
+            cbTipo.FormattingEnabled = true;
+            cbTipo.Location = new Point(18, 35);
+            cbTipo.Margin = new Padding(4, 3, 4, 3);
+            cbTipo.Name = "cbTipo";
+            cbTipo.Size = new Size(154, 21);
+            cbTipo.TabIndex = 1;
+            cbTipo.SelectedIndexChanged += cbTipo_SelectedIndexChanged_1;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 20);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 13);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "TIPO";
+            label10.AutoSize = true;
+            label10.Font = new Font("Franklin Gothic Medium Cond", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(14, 16);
+            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(29, 18);
+            label10.TabIndex = 19;
+            label10.Text = "Tipo";
             // 
             // btnSair
             // 
-            this.btnSair.BackColor = System.Drawing.Color.White;
-            this.btnSair.FlatAppearance.BorderSize = 0;
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSair.Location = new System.Drawing.Point(127, 3);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(60, 82);
-            this.btnSair.TabIndex = 4;
-            this.btnSair.Text = "Sair";
-            this.btnSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            btnSair.BackColor = Color.White;
+            btnSair.FlatAppearance.BorderSize = 0;
+            btnSair.FlatStyle = FlatStyle.Flat;
+            btnSair.Font = new Font("Franklin Gothic Medium Cond", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSair.Image = (Image)resources.GetObject("btnSair.Image");
+            btnSair.ImageAlign = ContentAlignment.TopCenter;
+            btnSair.Location = new Point(128, 3);
+            btnSair.Margin = new Padding(4, 3, 4, 3);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(70, 74);
+            btnSair.TabIndex = 4;
+            btnSair.Text = "Sair";
+            btnSair.TextAlign = ContentAlignment.BottomCenter;
+            btnSair.UseVisualStyleBackColor = false;
+            btnSair.Click += btnSair_Click;
             // 
             // btnVisualizar
             // 
-            this.btnVisualizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVisualizar.FlatAppearance.BorderSize = 0;
-            this.btnVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisualizar.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnVisualizar.Image")));
-            this.btnVisualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVisualizar.Location = new System.Drawing.Point(65, 3);
-            this.btnVisualizar.Name = "btnVisualizar";
-            this.btnVisualizar.Size = new System.Drawing.Size(60, 82);
-            this.btnVisualizar.TabIndex = 2;
-            this.btnVisualizar.Text = "Exibir";
-            this.btnVisualizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnVisualizar.UseVisualStyleBackColor = false;
-            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
+            btnVisualizar.BackColor = Color.Transparent;
+            btnVisualizar.FlatAppearance.BorderSize = 0;
+            btnVisualizar.FlatStyle = FlatStyle.Flat;
+            btnVisualizar.Font = new Font("Franklin Gothic Medium Cond", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVisualizar.Image = (Image)resources.GetObject("btnVisualizar.Image");
+            btnVisualizar.ImageAlign = ContentAlignment.TopCenter;
+            btnVisualizar.Location = new Point(66, 3);
+            btnVisualizar.Margin = new Padding(4, 3, 4, 3);
+            btnVisualizar.Name = "btnVisualizar";
+            btnVisualizar.Size = new Size(70, 74);
+            btnVisualizar.TabIndex = 2;
+            btnVisualizar.Text = "Exibir";
+            btnVisualizar.TextAlign = ContentAlignment.BottomCenter;
+            btnVisualizar.UseVisualStyleBackColor = false;
+            btnVisualizar.Click += btnVisualizar_Click;
             // 
             // btnClientes
             // 
-            this.btnClientes.BackColor = System.Drawing.Color.Transparent;
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnClientes.Location = new System.Drawing.Point(3, 3);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(60, 82);
-            this.btnClientes.TabIndex = 1;
-            this.btnClientes.Text = "Inserir";
-            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnClientes.UseVisualStyleBackColor = false;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            btnClientes.BackColor = Color.Transparent;
+            btnClientes.FlatAppearance.BorderSize = 0;
+            btnClientes.FlatStyle = FlatStyle.Flat;
+            btnClientes.Font = new Font("Franklin Gothic Medium Cond", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnClientes.Image = (Image)resources.GetObject("btnClientes.Image");
+            btnClientes.ImageAlign = ContentAlignment.TopCenter;
+            btnClientes.Location = new Point(4, 3);
+            btnClientes.Margin = new Padding(4, 3, 4, 3);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Size = new Size(70, 74);
+            btnClientes.TabIndex = 1;
+            btnClientes.Text = "Inserir";
+            btnClientes.TextAlign = ContentAlignment.BottomCenter;
+            btnClientes.UseVisualStyleBackColor = false;
+            btnClientes.Click += btnClientes_Click;
             // 
             // frmLocClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1009, 545);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dtGrid);
-            this.KeyPreview = true;
-            this.Name = "frmLocClientes";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmLocClientes";
-            this.Load += new System.EventHandler(this.frmLocClientes_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmLocClientes_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.dtGrid)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1177, 629);
+            Controls.Add(panel1);
+            Controls.Add(dtGrid);
+            KeyPreview = true;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "frmLocClientes";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Lista Clientes";
+            Load += frmLocClientes_Load;
+            KeyDown += frmLocClientes_KeyDown;
+            ((System.ComponentModel.ISupportInitialize)dtGrid).EndInit();
+            panel1.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dtGrid;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnVisualizar;
-        private System.Windows.Forms.Button btnClientes;
-        private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.MaskedTextBox mskCriterio;
-        private System.Windows.Forms.Label lbTipo;
-        private System.Windows.Forms.ComboBox cbTipo;
-        private System.Windows.Forms.Label label10;
+        private DataGridView dtGrid;
+        private Panel panel1;
+        private Button btnVisualizar;
+        private Button btnClientes;
+        private Button btnSair;
+        private Button btnFiltrar;
+        private GroupBox groupBox1;
+        private MaskedTextBox mskCriterio;
+        private Label lbTipo;
+        private ComboBox cbTipo;
+        private Label label10;
     }
 }

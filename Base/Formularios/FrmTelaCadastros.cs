@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Erp;
-
+using Base.Formularios;
 
 namespace Erp
 {
@@ -35,25 +35,37 @@ namespace Erp
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-           /*
-            // Cria as variáveis de execução comando e controle de transação
-            FbCommand connQuery = new FbCommand();
-            FbTransaction transaction;
-            // Inicia a transação local
-            transaction = connInfotech.BeginTransaction();
-            // Atribui a conexão e a transação ao comando
-            connQuery.Connection = connInfotech;
-            connQuery.Transaction = transaction;
-            connQuery.CommandText = "SELECT * FROM TB_CIDADES";
-            //Cria um reader, isso deve ser usado para ler os dados???
-            FbDataReader dtreQuery = connQuery.ExecuteReader();
-            // Pégua o número de registros localizados
-            Console.WriteLine(dtreQuery.FieldCount);
-            // Encerra o comando e a conexão
-            dtreQuery.Close();
-            connInfotech.Close();
-            Console.WriteLine(">>");
-           */
+            /*
+             // Cria as variáveis de execução comando e controle de transação
+             FbCommand connQuery = new FbCommand();
+             FbTransaction transaction;
+             // Inicia a transação local
+             transaction = connInfotech.BeginTransaction();
+             // Atribui a conexão e a transação ao comando
+             connQuery.Connection = connInfotech;
+             connQuery.Transaction = transaction;
+             connQuery.CommandText = "SELECT * FROM TB_CIDADES";
+             //Cria um reader, isso deve ser usado para ler os dados???
+             FbDataReader dtreQuery = connQuery.ExecuteReader();
+             // Pégua o número de registros localizados
+             Console.WriteLine(dtreQuery.FieldCount);
+             // Encerra o comando e a conexão
+             dtreQuery.Close();
+             connInfotech.Close();
+             Console.WriteLine(">>");
+            */
+        }
+
+        private void btnFornecedores_Click(object sender, EventArgs e)
+        {
+            FrmLocVendedor frm = new FrmLocVendedor();
+            frm.Show();
+        }
+
+        private void btnEstabelecimento_Click(object sender, EventArgs e)
+        {
+            FrmCadEstabelecimento frm = new FrmCadEstabelecimento();
+            frm.Show();
         }
     }
 }

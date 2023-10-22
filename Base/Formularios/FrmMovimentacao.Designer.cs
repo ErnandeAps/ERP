@@ -30,156 +30,164 @@ namespace Erp
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMovimentacao));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnParametros = new System.Windows.Forms.Button();
-            this.btnProdutos = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.btnNfe = new System.Windows.Forms.Button();
-            this.btnOrcamento = new System.Windows.Forms.Button();
-            this.btnVendas = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            btnParametros = new Button();
+            btnProdutos = new Button();
+            btnSair = new Button();
+            btnNfe = new Button();
+            btnOrcamento = new Button();
+            btnVendas = new Button();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btnParametros);
-            this.panel1.Controls.Add(this.btnProdutos);
-            this.panel1.Controls.Add(this.btnSair);
-            this.panel1.Controls.Add(this.btnNfe);
-            this.panel1.Controls.Add(this.btnOrcamento);
-            this.panel1.Controls.Add(this.btnVendas);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 87);
-            this.panel1.TabIndex = 2;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btnParametros);
+            panel1.Controls.Add(btnProdutos);
+            panel1.Controls.Add(btnSair);
+            panel1.Controls.Add(btnNfe);
+            panel1.Controls.Add(btnOrcamento);
+            panel1.Controls.Add(btnVendas);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(933, 84);
+            panel1.TabIndex = 2;
             // 
             // btnParametros
             // 
-            this.btnParametros.BackColor = System.Drawing.Color.White;
-            this.btnParametros.FlatAppearance.BorderSize = 0;
-            this.btnParametros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnParametros.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnParametros.Image = ((System.Drawing.Image)(resources.GetObject("btnParametros.Image")));
-            this.btnParametros.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnParametros.Location = new System.Drawing.Point(299, 3);
-            this.btnParametros.Name = "btnParametros";
-            this.btnParametros.Size = new System.Drawing.Size(86, 82);
-            this.btnParametros.TabIndex = 5;
-            this.btnParametros.Text = "Estoque";
-            this.btnParametros.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnParametros.UseVisualStyleBackColor = false;
+            btnParametros.BackColor = Color.White;
+            btnParametros.FlatAppearance.BorderSize = 0;
+            btnParametros.FlatStyle = FlatStyle.Flat;
+            btnParametros.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnParametros.Image = (Image)resources.GetObject("btnParametros.Image");
+            btnParametros.ImageAlign = ContentAlignment.TopCenter;
+            btnParametros.Location = new Point(258, 3);
+            btnParametros.Margin = new Padding(4, 3, 4, 3);
+            btnParametros.Name = "btnParametros";
+            btnParametros.Size = new Size(70, 74);
+            btnParametros.TabIndex = 5;
+            btnParametros.Text = "Estoque";
+            btnParametros.TextAlign = ContentAlignment.BottomCenter;
+            btnParametros.UseVisualStyleBackColor = false;
             // 
             // btnProdutos
             // 
-            this.btnProdutos.BackColor = System.Drawing.Color.White;
-            this.btnProdutos.FlatAppearance.BorderSize = 0;
-            this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdutos.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProdutos.Image = ((System.Drawing.Image)(resources.GetObject("btnProdutos.Image")));
-            this.btnProdutos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnProdutos.Location = new System.Drawing.Point(228, 3);
-            this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(78, 82);
-            this.btnProdutos.TabIndex = 4;
-            this.btnProdutos.Text = "Compras";
-            this.btnProdutos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProdutos.UseVisualStyleBackColor = false;
+            btnProdutos.BackColor = Color.White;
+            btnProdutos.FlatAppearance.BorderSize = 0;
+            btnProdutos.FlatStyle = FlatStyle.Flat;
+            btnProdutos.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnProdutos.Image = (Image)resources.GetObject("btnProdutos.Image");
+            btnProdutos.ImageAlign = ContentAlignment.TopCenter;
+            btnProdutos.Location = new Point(197, 3);
+            btnProdutos.Margin = new Padding(4, 3, 4, 3);
+            btnProdutos.Name = "btnProdutos";
+            btnProdutos.Size = new Size(70, 74);
+            btnProdutos.TabIndex = 4;
+            btnProdutos.Text = "Compras";
+            btnProdutos.TextAlign = ContentAlignment.BottomCenter;
+            btnProdutos.UseVisualStyleBackColor = false;
             // 
             // btnSair
             // 
-            this.btnSair.BackColor = System.Drawing.Color.White;
-            this.btnSair.FlatAppearance.BorderSize = 0;
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSair.Location = new System.Drawing.Point(384, 3);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(69, 82);
-            this.btnSair.TabIndex = 3;
-            this.btnSair.Text = "Sair";
-            this.btnSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            btnSair.BackColor = Color.White;
+            btnSair.FlatAppearance.BorderSize = 0;
+            btnSair.FlatStyle = FlatStyle.Flat;
+            btnSair.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSair.Image = (Image)resources.GetObject("btnSair.Image");
+            btnSair.ImageAlign = ContentAlignment.TopCenter;
+            btnSair.Location = new Point(319, 3);
+            btnSair.Margin = new Padding(4, 3, 4, 3);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(70, 74);
+            btnSair.TabIndex = 3;
+            btnSair.Text = "Sair";
+            btnSair.TextAlign = ContentAlignment.BottomCenter;
+            btnSair.UseVisualStyleBackColor = false;
+            btnSair.Click += btnSair_Click;
             // 
             // btnNfe
             // 
-            this.btnNfe.BackColor = System.Drawing.Color.White;
-            this.btnNfe.FlatAppearance.BorderSize = 0;
-            this.btnNfe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNfe.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNfe.Image = ((System.Drawing.Image)(resources.GetObject("btnNfe.Image")));
-            this.btnNfe.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNfe.Location = new System.Drawing.Point(154, 3);
-            this.btnNfe.Name = "btnNfe";
-            this.btnNfe.Size = new System.Drawing.Size(78, 82);
-            this.btnNfe.TabIndex = 2;
-            this.btnNfe.Text = "NF-e";
-            this.btnNfe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnNfe.UseVisualStyleBackColor = false;
+            btnNfe.BackColor = Color.White;
+            btnNfe.FlatAppearance.BorderSize = 0;
+            btnNfe.FlatStyle = FlatStyle.Flat;
+            btnNfe.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNfe.Image = (Image)resources.GetObject("btnNfe.Image");
+            btnNfe.ImageAlign = ContentAlignment.TopCenter;
+            btnNfe.Location = new Point(136, 3);
+            btnNfe.Margin = new Padding(4, 3, 4, 3);
+            btnNfe.Name = "btnNfe";
+            btnNfe.Size = new Size(70, 74);
+            btnNfe.TabIndex = 2;
+            btnNfe.Text = "NF-e";
+            btnNfe.TextAlign = ContentAlignment.BottomCenter;
+            btnNfe.UseVisualStyleBackColor = false;
             // 
             // btnOrcamento
             // 
-            this.btnOrcamento.BackColor = System.Drawing.Color.Transparent;
-            this.btnOrcamento.FlatAppearance.BorderSize = 0;
-            this.btnOrcamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrcamento.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrcamento.Image = ((System.Drawing.Image)(resources.GetObject("btnOrcamento.Image")));
-            this.btnOrcamento.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnOrcamento.Location = new System.Drawing.Point(76, 4);
-            this.btnOrcamento.Name = "btnOrcamento";
-            this.btnOrcamento.Size = new System.Drawing.Size(83, 82);
-            this.btnOrcamento.TabIndex = 1;
-            this.btnOrcamento.Text = "Orçamento";
-            this.btnOrcamento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnOrcamento.UseVisualStyleBackColor = false;
+            btnOrcamento.BackColor = Color.Transparent;
+            btnOrcamento.FlatAppearance.BorderSize = 0;
+            btnOrcamento.FlatStyle = FlatStyle.Flat;
+            btnOrcamento.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnOrcamento.Image = (Image)resources.GetObject("btnOrcamento.Image");
+            btnOrcamento.ImageAlign = ContentAlignment.TopCenter;
+            btnOrcamento.Location = new Point(74, 3);
+            btnOrcamento.Margin = new Padding(4, 3, 4, 3);
+            btnOrcamento.Name = "btnOrcamento";
+            btnOrcamento.Size = new Size(70, 74);
+            btnOrcamento.TabIndex = 1;
+            btnOrcamento.Text = "Dav";
+            btnOrcamento.TextAlign = ContentAlignment.BottomCenter;
+            btnOrcamento.UseVisualStyleBackColor = false;
+            btnOrcamento.Click += btnOrcamento_Click;
             // 
             // btnVendas
             // 
-            this.btnVendas.BackColor = System.Drawing.Color.Transparent;
-            this.btnVendas.FlatAppearance.BorderSize = 0;
-            this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVendas.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVendas.Image = ((System.Drawing.Image)(resources.GetObject("btnVendas.Image")));
-            this.btnVendas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVendas.Location = new System.Drawing.Point(11, 3);
-            this.btnVendas.Name = "btnVendas";
-            this.btnVendas.Size = new System.Drawing.Size(69, 82);
-            this.btnVendas.TabIndex = 0;
-            this.btnVendas.Text = "Vendas";
-            this.btnVendas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnVendas.UseVisualStyleBackColor = false;
+            btnVendas.BackColor = Color.Transparent;
+            btnVendas.FlatAppearance.BorderSize = 0;
+            btnVendas.FlatStyle = FlatStyle.Flat;
+            btnVendas.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVendas.Image = (Image)resources.GetObject("btnVendas.Image");
+            btnVendas.ImageAlign = ContentAlignment.TopCenter;
+            btnVendas.Location = new Point(13, 3);
+            btnVendas.Margin = new Padding(4, 3, 4, 3);
+            btnVendas.Name = "btnVendas";
+            btnVendas.Size = new Size(70, 74);
+            btnVendas.TabIndex = 0;
+            btnVendas.Text = "Vendas";
+            btnVendas.TextAlign = ContentAlignment.BottomCenter;
+            btnVendas.UseVisualStyleBackColor = false;
             // 
             // FrmMovimentacao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.ControlBox = false;
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.KeyPreview = true;
-            this.Name = "FrmMovimentacao";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmVendas";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmVendas_KeyDown);
-            this.panel1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(933, 519);
+            ControlBox = false;
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
+            KeyPreview = true;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "FrmMovimentacao";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "FrmVendas";
+            WindowState = FormWindowState.Maximized;
+            KeyDown += FrmVendas_KeyDown;
+            panel1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnParametros;
-        private System.Windows.Forms.Button btnProdutos;
-        private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnNfe;
-        private System.Windows.Forms.Button btnOrcamento;
-        private System.Windows.Forms.Button btnVendas;
+        private Panel panel1;
+        private Button btnParametros;
+        private Button btnProdutos;
+        private Button btnSair;
+        private Button btnNfe;
+        private Button btnOrcamento;
+        private Button btnVendas;
     }
 }

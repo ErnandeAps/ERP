@@ -30,369 +30,390 @@ namespace Erp
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.lblFuncao = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblData = new System.Windows.Forms.Label();
-            this.lblSuporte = new System.Windows.Forms.Label();
-            this.lblEmpresa = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.btnAjuda = new System.Windows.Forms.Button();
-            this.btnUtilitarios = new System.Windows.Forms.Button();
-            this.btnRelatorios = new System.Windows.Forms.Button();
-            this.btnFinanceiro = new System.Windows.Forms.Button();
-            this.btnMovimentacao = new System.Windows.Forms.Button();
-            this.btnCadastros = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblLogo = new System.Windows.Forms.Label();
-            this.pnlPrincipal = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.pnlPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            panel6 = new Panel();
+            lblFuncao = new Label();
+            lblUsuario = new Label();
+            pictureBox1 = new PictureBox();
+            lblData = new Label();
+            lblSuporte = new Label();
+            lblEmpresa = new Label();
+            panel2 = new Panel();
+            btnSair = new Button();
+            btnAjuda = new Button();
+            btnUtilitarios = new Button();
+            btnRelatorios = new Button();
+            btnFinanceiro = new Button();
+            btnMovimentacao = new Button();
+            btnCadastros = new Button();
+            button1 = new Button();
+            panel3 = new Panel();
+            lblLogo = new Label();
+            pnlPrincipal = new Panel();
+            pictureBox2 = new PictureBox();
+            panel1.SuspendLayout();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            pnlPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.lblData);
-            this.panel1.Controls.Add(this.lblSuporte);
-            this.panel1.Controls.Add(this.lblEmpresa);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1187, 53);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            panel1.BackColor = Color.FromArgb(64, 64, 64);
+            panel1.Controls.Add(panel6);
+            panel1.Controls.Add(lblData);
+            panel1.Controls.Add(lblSuporte);
+            panel1.Controls.Add(lblEmpresa);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1385, 61);
+            panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.lblFuncao);
-            this.panel6.Controls.Add(this.lblUsuario);
-            this.panel6.Controls.Add(this.pictureBox1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1054, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(133, 53);
-            this.panel6.TabIndex = 2;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            panel6.Controls.Add(lblFuncao);
+            panel6.Controls.Add(lblUsuario);
+            panel6.Controls.Add(pictureBox1);
+            panel6.Dock = DockStyle.Right;
+            panel6.Location = new Point(1230, 0);
+            panel6.Margin = new Padding(4, 3, 4, 3);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(155, 61);
+            panel6.TabIndex = 2;
+            panel6.Paint += panel6_Paint;
             // 
             // lblFuncao
             // 
-            this.lblFuncao.AutoSize = true;
-            this.lblFuncao.ForeColor = System.Drawing.Color.White;
-            this.lblFuncao.Location = new System.Drawing.Point(15, 27);
-            this.lblFuncao.Name = "lblFuncao";
-            this.lblFuncao.Size = new System.Drawing.Size(43, 13);
-            this.lblFuncao.TabIndex = 4;
-            this.lblFuncao.Text = "Função";
+            lblFuncao.AutoSize = true;
+            lblFuncao.ForeColor = Color.White;
+            lblFuncao.Location = new Point(18, 31);
+            lblFuncao.Margin = new Padding(4, 0, 4, 0);
+            lblFuncao.Name = "lblFuncao";
+            lblFuncao.Size = new Size(46, 15);
+            lblFuncao.TabIndex = 4;
+            lblFuncao.Text = "Função";
             // 
             // lblUsuario
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(15, 14);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
-            this.lblUsuario.TabIndex = 3;
-            this.lblUsuario.Text = "Usuário";
-            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
+            lblUsuario.AutoSize = true;
+            lblUsuario.ForeColor = Color.White;
+            lblUsuario.Location = new Point(18, 16);
+            lblUsuario.Margin = new Padding(4, 0, 4, 0);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(47, 15);
+            lblUsuario.TabIndex = 3;
+            lblUsuario.Text = "Usuário";
+            lblUsuario.Click += lblUsuario_Click;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(95, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 53);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Dock = DockStyle.Right;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(111, 0);
+            pictureBox1.Margin = new Padding(4, 3, 4, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 61);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // lblData
             // 
-            this.lblData.AutoSize = true;
-            this.lblData.ForeColor = System.Drawing.Color.White;
-            this.lblData.Location = new System.Drawing.Point(305, 37);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(262, 13);
-            this.lblData.TabIndex = 2;
-            this.lblData.Text = "Suportek Automação F.: 84 3302-6370 / 9 9871-5995";
-            this.lblData.Click += new System.EventHandler(this.lblData_Click);
+            lblData.AutoSize = true;
+            lblData.ForeColor = Color.White;
+            lblData.Location = new Point(356, 43);
+            lblData.Margin = new Padding(4, 0, 4, 0);
+            lblData.Name = "lblData";
+            lblData.Size = new Size(278, 15);
+            lblData.TabIndex = 2;
+            lblData.Text = "Suportek Automação F.: 84 3302-6370 / 9 9871-5995";
+            lblData.Click += lblData_Click;
             // 
             // lblSuporte
             // 
-            this.lblSuporte.AutoSize = true;
-            this.lblSuporte.ForeColor = System.Drawing.Color.White;
-            this.lblSuporte.Location = new System.Drawing.Point(3, 37);
-            this.lblSuporte.Name = "lblSuporte";
-            this.lblSuporte.Size = new System.Drawing.Size(262, 13);
-            this.lblSuporte.TabIndex = 1;
-            this.lblSuporte.Text = "Suportek Automação F.: 84 3302-6370 / 9 9871-5995";
+            lblSuporte.AutoSize = true;
+            lblSuporte.ForeColor = Color.White;
+            lblSuporte.Location = new Point(4, 43);
+            lblSuporte.Margin = new Padding(4, 0, 4, 0);
+            lblSuporte.Name = "lblSuporte";
+            lblSuporte.Size = new Size(278, 15);
+            lblSuporte.TabIndex = 1;
+            lblSuporte.Text = "Suportek Automação F.: 84 3302-6370 / 9 9871-5995";
             // 
             // lblEmpresa
             // 
-            this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.ForeColor = System.Drawing.Color.White;
-            this.lblEmpresa.Location = new System.Drawing.Point(3, 9);
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(175, 13);
-            this.lblEmpresa.TabIndex = 0;
-            this.lblEmpresa.Text = "CASA DO MATUTO DE CATENDE";
+            lblEmpresa.AutoSize = true;
+            lblEmpresa.ForeColor = Color.White;
+            lblEmpresa.Location = new Point(4, 10);
+            lblEmpresa.Margin = new Padding(4, 0, 4, 0);
+            lblEmpresa.Name = "lblEmpresa";
+            lblEmpresa.Size = new Size(176, 15);
+            lblEmpresa.TabIndex = 0;
+            lblEmpresa.Text = "CASA DO MATUTO DE CATENDE";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.btnSair);
-            this.panel2.Controls.Add(this.btnAjuda);
-            this.panel2.Controls.Add(this.btnUtilitarios);
-            this.panel2.Controls.Add(this.btnRelatorios);
-            this.panel2.Controls.Add(this.btnFinanceiro);
-            this.panel2.Controls.Add(this.btnMovimentacao);
-            this.panel2.Controls.Add(this.btnCadastros);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 53);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(141, 572);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            panel2.BackColor = Color.FromArgb(64, 64, 64);
+            panel2.Controls.Add(btnSair);
+            panel2.Controls.Add(btnAjuda);
+            panel2.Controls.Add(btnUtilitarios);
+            panel2.Controls.Add(btnRelatorios);
+            panel2.Controls.Add(btnFinanceiro);
+            panel2.Controls.Add(btnMovimentacao);
+            panel2.Controls.Add(btnCadastros);
+            panel2.Controls.Add(button1);
+            panel2.Controls.Add(panel3);
+            panel2.Dock = DockStyle.Left;
+            panel2.Location = new Point(0, 61);
+            panel2.Margin = new Padding(4, 3, 4, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(164, 660);
+            panel2.TabIndex = 1;
+            panel2.Paint += panel2_Paint;
             // 
             // btnSair
             // 
-            this.btnSair.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSair.FlatAppearance.BorderSize = 0;
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSair.Location = new System.Drawing.Point(0, 362);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(141, 38);
-            this.btnSair.TabIndex = 8;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            btnSair.Dock = DockStyle.Top;
+            btnSair.FlatAppearance.BorderSize = 0;
+            btnSair.FlatStyle = FlatStyle.Flat;
+            btnSair.Font = new Font("Franklin Gothic Medium Cond", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSair.ForeColor = Color.White;
+            btnSair.Image = (Image)resources.GetObject("btnSair.Image");
+            btnSair.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSair.Location = new Point(0, 419);
+            btnSair.Margin = new Padding(4, 3, 4, 3);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(164, 44);
+            btnSair.TabIndex = 8;
+            btnSair.Text = "Sair";
+            btnSair.UseVisualStyleBackColor = true;
+            btnSair.Click += btnSair_Click;
             // 
             // btnAjuda
             // 
-            this.btnAjuda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAjuda.FlatAppearance.BorderSize = 0;
-            this.btnAjuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjuda.ForeColor = System.Drawing.Color.White;
-            this.btnAjuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAjuda.Image")));
-            this.btnAjuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAjuda.Location = new System.Drawing.Point(0, 324);
-            this.btnAjuda.Name = "btnAjuda";
-            this.btnAjuda.Size = new System.Drawing.Size(141, 38);
-            this.btnAjuda.TabIndex = 7;
-            this.btnAjuda.Text = "Ajuda";
-            this.btnAjuda.UseVisualStyleBackColor = true;
+            btnAjuda.Dock = DockStyle.Top;
+            btnAjuda.FlatAppearance.BorderSize = 0;
+            btnAjuda.FlatStyle = FlatStyle.Flat;
+            btnAjuda.Font = new Font("Franklin Gothic Medium Cond", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAjuda.ForeColor = Color.White;
+            btnAjuda.Image = (Image)resources.GetObject("btnAjuda.Image");
+            btnAjuda.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAjuda.Location = new Point(0, 375);
+            btnAjuda.Margin = new Padding(4, 3, 4, 3);
+            btnAjuda.Name = "btnAjuda";
+            btnAjuda.Size = new Size(164, 44);
+            btnAjuda.TabIndex = 7;
+            btnAjuda.Text = "Ajuda";
+            btnAjuda.UseVisualStyleBackColor = true;
             // 
             // btnUtilitarios
             // 
-            this.btnUtilitarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUtilitarios.FlatAppearance.BorderSize = 0;
-            this.btnUtilitarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUtilitarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUtilitarios.ForeColor = System.Drawing.Color.White;
-            this.btnUtilitarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUtilitarios.Image")));
-            this.btnUtilitarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUtilitarios.Location = new System.Drawing.Point(0, 286);
-            this.btnUtilitarios.Name = "btnUtilitarios";
-            this.btnUtilitarios.Size = new System.Drawing.Size(141, 38);
-            this.btnUtilitarios.TabIndex = 6;
-            this.btnUtilitarios.Text = "Utilitários";
-            this.btnUtilitarios.UseVisualStyleBackColor = true;
+            btnUtilitarios.Dock = DockStyle.Top;
+            btnUtilitarios.FlatAppearance.BorderSize = 0;
+            btnUtilitarios.FlatStyle = FlatStyle.Flat;
+            btnUtilitarios.Font = new Font("Franklin Gothic Medium Cond", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnUtilitarios.ForeColor = Color.White;
+            btnUtilitarios.Image = (Image)resources.GetObject("btnUtilitarios.Image");
+            btnUtilitarios.ImageAlign = ContentAlignment.MiddleLeft;
+            btnUtilitarios.Location = new Point(0, 331);
+            btnUtilitarios.Margin = new Padding(4, 3, 4, 3);
+            btnUtilitarios.Name = "btnUtilitarios";
+            btnUtilitarios.Size = new Size(164, 44);
+            btnUtilitarios.TabIndex = 6;
+            btnUtilitarios.Text = "Utilitários";
+            btnUtilitarios.UseVisualStyleBackColor = true;
             // 
             // btnRelatorios
             // 
-            this.btnRelatorios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRelatorios.FlatAppearance.BorderSize = 0;
-            this.btnRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRelatorios.ForeColor = System.Drawing.Color.White;
-            this.btnRelatorios.Image = ((System.Drawing.Image)(resources.GetObject("btnRelatorios.Image")));
-            this.btnRelatorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRelatorios.Location = new System.Drawing.Point(0, 248);
-            this.btnRelatorios.Name = "btnRelatorios";
-            this.btnRelatorios.Size = new System.Drawing.Size(141, 38);
-            this.btnRelatorios.TabIndex = 5;
-            this.btnRelatorios.Text = "Relatórios";
-            this.btnRelatorios.UseVisualStyleBackColor = true;
-            this.btnRelatorios.Click += new System.EventHandler(this.btnRelatorios_Click);
+            btnRelatorios.Dock = DockStyle.Top;
+            btnRelatorios.FlatAppearance.BorderSize = 0;
+            btnRelatorios.FlatStyle = FlatStyle.Flat;
+            btnRelatorios.Font = new Font("Franklin Gothic Medium Cond", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRelatorios.ForeColor = Color.White;
+            btnRelatorios.Image = (Image)resources.GetObject("btnRelatorios.Image");
+            btnRelatorios.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRelatorios.Location = new Point(0, 287);
+            btnRelatorios.Margin = new Padding(4, 3, 4, 3);
+            btnRelatorios.Name = "btnRelatorios";
+            btnRelatorios.Size = new Size(164, 44);
+            btnRelatorios.TabIndex = 5;
+            btnRelatorios.Text = "Relatórios";
+            btnRelatorios.UseVisualStyleBackColor = true;
+            btnRelatorios.Click += btnRelatorios_Click;
             // 
             // btnFinanceiro
             // 
-            this.btnFinanceiro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFinanceiro.FlatAppearance.BorderSize = 0;
-            this.btnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinanceiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinanceiro.ForeColor = System.Drawing.Color.White;
-            this.btnFinanceiro.Image = ((System.Drawing.Image)(resources.GetObject("btnFinanceiro.Image")));
-            this.btnFinanceiro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinanceiro.Location = new System.Drawing.Point(0, 210);
-            this.btnFinanceiro.Name = "btnFinanceiro";
-            this.btnFinanceiro.Size = new System.Drawing.Size(141, 38);
-            this.btnFinanceiro.TabIndex = 4;
-            this.btnFinanceiro.Text = "Financeiro";
-            this.btnFinanceiro.UseVisualStyleBackColor = true;
-            this.btnFinanceiro.Click += new System.EventHandler(this.btnFinanceiro_Click);
+            btnFinanceiro.Dock = DockStyle.Top;
+            btnFinanceiro.FlatAppearance.BorderSize = 0;
+            btnFinanceiro.FlatStyle = FlatStyle.Flat;
+            btnFinanceiro.Font = new Font("Franklin Gothic Medium Cond", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFinanceiro.ForeColor = Color.White;
+            btnFinanceiro.Image = (Image)resources.GetObject("btnFinanceiro.Image");
+            btnFinanceiro.ImageAlign = ContentAlignment.MiddleLeft;
+            btnFinanceiro.Location = new Point(0, 243);
+            btnFinanceiro.Margin = new Padding(4, 3, 4, 3);
+            btnFinanceiro.Name = "btnFinanceiro";
+            btnFinanceiro.Size = new Size(164, 44);
+            btnFinanceiro.TabIndex = 4;
+            btnFinanceiro.Text = "Financeiro";
+            btnFinanceiro.UseVisualStyleBackColor = true;
+            btnFinanceiro.Click += btnFinanceiro_Click;
             // 
             // btnMovimentacao
             // 
-            this.btnMovimentacao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMovimentacao.FlatAppearance.BorderSize = 0;
-            this.btnMovimentacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMovimentacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMovimentacao.ForeColor = System.Drawing.Color.White;
-            this.btnMovimentacao.Image = ((System.Drawing.Image)(resources.GetObject("btnMovimentacao.Image")));
-            this.btnMovimentacao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMovimentacao.Location = new System.Drawing.Point(0, 172);
-            this.btnMovimentacao.Name = "btnMovimentacao";
-            this.btnMovimentacao.Size = new System.Drawing.Size(141, 38);
-            this.btnMovimentacao.TabIndex = 3;
-            this.btnMovimentacao.Text = "Movimentação";
-            this.btnMovimentacao.UseVisualStyleBackColor = true;
-            this.btnMovimentacao.Click += new System.EventHandler(this.btnMovimentacao_Click);
+            btnMovimentacao.Dock = DockStyle.Top;
+            btnMovimentacao.FlatAppearance.BorderSize = 0;
+            btnMovimentacao.FlatStyle = FlatStyle.Flat;
+            btnMovimentacao.Font = new Font("Franklin Gothic Medium Cond", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMovimentacao.ForeColor = Color.White;
+            btnMovimentacao.Image = (Image)resources.GetObject("btnMovimentacao.Image");
+            btnMovimentacao.ImageAlign = ContentAlignment.MiddleLeft;
+            btnMovimentacao.Location = new Point(0, 199);
+            btnMovimentacao.Margin = new Padding(4, 3, 4, 3);
+            btnMovimentacao.Name = "btnMovimentacao";
+            btnMovimentacao.Size = new Size(164, 44);
+            btnMovimentacao.TabIndex = 3;
+            btnMovimentacao.Text = "Movimentação";
+            btnMovimentacao.UseVisualStyleBackColor = true;
+            btnMovimentacao.Click += btnMovimentacao_Click;
             // 
             // btnCadastros
             // 
-            this.btnCadastros.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCadastros.FlatAppearance.BorderSize = 0;
-            this.btnCadastros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastros.ForeColor = System.Drawing.Color.White;
-            this.btnCadastros.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastros.Image")));
-            this.btnCadastros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastros.Location = new System.Drawing.Point(0, 134);
-            this.btnCadastros.Name = "btnCadastros";
-            this.btnCadastros.Size = new System.Drawing.Size(141, 38);
-            this.btnCadastros.TabIndex = 2;
-            this.btnCadastros.Text = "Cadastros";
-            this.btnCadastros.UseVisualStyleBackColor = true;
-            this.btnCadastros.Click += new System.EventHandler(this.btnCadastros_Click);
+            btnCadastros.Dock = DockStyle.Top;
+            btnCadastros.FlatAppearance.BorderSize = 0;
+            btnCadastros.FlatStyle = FlatStyle.Flat;
+            btnCadastros.Font = new Font("Franklin Gothic Medium Cond", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCadastros.ForeColor = Color.White;
+            btnCadastros.Image = (Image)resources.GetObject("btnCadastros.Image");
+            btnCadastros.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCadastros.Location = new Point(0, 155);
+            btnCadastros.Margin = new Padding(4, 3, 4, 3);
+            btnCadastros.Name = "btnCadastros";
+            btnCadastros.Size = new Size(164, 44);
+            btnCadastros.TabIndex = 2;
+            btnCadastros.Text = "Cadastros";
+            btnCadastros.UseVisualStyleBackColor = true;
+            btnCadastros.Click += btnCadastros_Click;
             // 
             // button1
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 96);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 38);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Início";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Dock = DockStyle.Top;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Franklin Gothic Medium Cond", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(0, 111);
+            button1.Margin = new Padding(4, 3, 4, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(164, 44);
+            button1.TabIndex = 1;
+            button1.Text = "Início";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.lblLogo);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(141, 96);
-            this.panel3.TabIndex = 0;
+            panel3.Controls.Add(lblLogo);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 0);
+            panel3.Margin = new Padding(4, 3, 4, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(164, 111);
+            panel3.TabIndex = 0;
             // 
             // lblLogo
             // 
-            this.lblLogo.AutoSize = true;
-            this.lblLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogo.ForeColor = System.Drawing.Color.White;
-            this.lblLogo.Location = new System.Drawing.Point(21, 39);
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(89, 20);
-            this.lblLogo.TabIndex = 0;
-            this.lblLogo.Text = "Logomarca";
+            lblLogo.AutoSize = true;
+            lblLogo.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblLogo.ForeColor = Color.White;
+            lblLogo.Location = new Point(24, 45);
+            lblLogo.Margin = new Padding(4, 0, 4, 0);
+            lblLogo.Name = "lblLogo";
+            lblLogo.Size = new Size(89, 20);
+            lblLogo.TabIndex = 0;
+            lblLogo.Text = "Logomarca";
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.Controls.Add(this.pictureBox2);
-            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPrincipal.Location = new System.Drawing.Point(141, 53);
-            this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(1046, 572);
-            this.pnlPrincipal.TabIndex = 2;
+            pnlPrincipal.Controls.Add(pictureBox2);
+            pnlPrincipal.Dock = DockStyle.Fill;
+            pnlPrincipal.Location = new Point(164, 61);
+            pnlPrincipal.Margin = new Padding(4, 3, 4, 3);
+            pnlPrincipal.Name = "pnlPrincipal";
+            pnlPrincipal.Size = new Size(1221, 660);
+            pnlPrincipal.TabIndex = 2;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1046, 572);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Dock = DockStyle.Fill;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Margin = new Padding(4, 3, 4, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(1221, 660);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
             // FrmDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1187, 625);
-            this.ControlBox = false;
-            this.Controls.Add(this.pnlPrincipal);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Name = "FrmDashboard";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sistema de gestão comercial";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmDashboard_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.pnlPrincipal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1385, 721);
+            ControlBox = false;
+            Controls.Add(pnlPrincipal);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "FrmDashboard";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Sistema de gestão comercial";
+            WindowState = FormWindowState.Maximized;
+            Load += FrmDashboard_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            pnlPrincipal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnAjuda;
-        private System.Windows.Forms.Button btnUtilitarios;
-        private System.Windows.Forms.Button btnRelatorios;
-        private System.Windows.Forms.Button btnFinanceiro;
-        private System.Windows.Forms.Button btnMovimentacao;
-        private System.Windows.Forms.Button btnCadastros;
-        private System.Windows.Forms.Label lblEmpresa;
-        private System.Windows.Forms.Label lblSuporte;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblData;
-        private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label lblFuncao;
-        private System.Windows.Forms.Label lblLogo;
-        private System.Windows.Forms.Panel pnlPrincipal;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private Panel panel1;
+        private Panel panel2;
+        private Button button1;
+        private Panel panel3;
+        private Button btnSair;
+        private Button btnAjuda;
+        private Button btnUtilitarios;
+        private Button btnRelatorios;
+        private Button btnFinanceiro;
+        private Button btnMovimentacao;
+        private Button btnCadastros;
+        private Label lblEmpresa;
+        private Label lblSuporte;
+        private Panel panel6;
+        private PictureBox pictureBox1;
+        private Label lblData;
+        private Label lblUsuario;
+        private Label lblFuncao;
+        private Label lblLogo;
+        private Panel pnlPrincipal;
+        private PictureBox pictureBox2;
     }
 }
 

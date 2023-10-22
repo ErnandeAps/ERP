@@ -83,7 +83,7 @@ namespace Erp
 
         }
 
-       
+
 
         private void btnRelatorios_Click(object sender, EventArgs e)
         {
@@ -91,7 +91,8 @@ namespace Erp
         }
 
         private void btnMovimentacao_Click(object sender, EventArgs e)
-        {FrmMovimentacao frm = new FrmMovimentacao ();
+        {
+            FrmMovimentacao frm = new FrmMovimentacao();
             frm.TopLevel = false;
             pnlPrincipal.Controls.Add(frm);
             frm.Show();

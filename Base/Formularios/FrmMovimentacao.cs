@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Base.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,12 @@ namespace Erp
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnOrcamento_Click(object sender, EventArgs e)
+        {
+            FrmLocDav  frm = new FrmLocDav();
+            frm.Show();
         }
     }
 }

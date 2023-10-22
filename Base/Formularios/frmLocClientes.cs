@@ -15,13 +15,13 @@ namespace Erp
 {
     public partial class frmLocClientes : Form
     {
-                       
-       public string strID_CADASTRO;
-       public string Parametro
+
+        public string strID_CADASTRO;
+        public string Parametro
         {
             get { return strID_CADASTRO; }
         }
-        
+
         public frmLocClientes()
         {
             InitializeComponent();
@@ -77,7 +77,7 @@ namespace Erp
         {
 
             Controls.Add(dtGrid);
-            dtGrid.Size = new Size(986, 437);
+            dtGrid.Size = new Size(1150, 504);
 
             dtGrid.ColumnCount = 9;
             DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
@@ -119,10 +119,8 @@ namespace Erp
             dtGrid.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dtGrid.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dtGrid.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            
 
-
-            if (strSql== "")
+            if (strSql == "")
             {
                 strSql = "Select ID_CADASTRO, CGC, RAZAO, FANTASIA, IE, ENDER, NUMERO, BAIRRO, CIDADE from CADASTRO where ID_CADASTRO>0";
 
@@ -131,50 +129,51 @@ namespace Erp
             {
                 dtGrid.Rows.Clear();
             }
-                                    
+
             using (FbConnection conexaoFireBird = ConexaoFb.getInstancia().getConexao())
-            try
-            {
+                try
+                {
                     conexaoFireBird.Open();
                     FbCommand cmd = new FbCommand(strSql, conexaoFireBird);
                     FbDataReader Resultado = cmd.ExecuteReader();
-                   
+
                     if (Resultado.HasRows)
-                {
-                    while (Resultado.Read())
                     {
+                        while (Resultado.Read())
+                        {
 
-                        dtGrid.Rows.Add(Resultado[0], Resultado[1], Resultado[2], Resultado[3], Resultado[4], Resultado[5], Resultado[6], Resultado[7], Resultado[8]);
+                            dtGrid.Rows.Add(Resultado[0], Resultado[1], Resultado[2], Resultado[3], Resultado[4], Resultado[5], Resultado[6], Resultado[7], Resultado[8]);
 
+                        }
                     }
-                }
 
-            }catch(Exception)
-            {
-                MessageBox.Show("Não foi possível se conectar ao banco");
-            }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Não foi possível se conectar ao banco");
+                }
                 finally
                 {
-                    conexaoFireBird.Close();
+                    //conexaoFireBird.Close();
                 }
         }
 
         private void BtnPcnpj_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void dtGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             strID_CADASTRO = dtGrid.CurrentRow.Cells[0].Value.ToString();
-            
+
 
         }
 
         private void btSelecao_Click(object sender, EventArgs e)
         {
-            
-         
+
+
         }
 
         private void frmLocClientes_KeyDown(object sender, KeyEventArgs e)
@@ -202,17 +201,17 @@ namespace Erp
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
-                        
+
             strID_CADASTRO = dtGrid.CurrentRow.Cells[0].Value.ToString();
             Clientes clientes = new Clientes();
             //using (var addfrm = new FrmCadCliente(strID_CADASTRO))
 
             FrmCadCliente addfrm = new FrmCadCliente(strID_CADASTRO);
-            
+
             addfrm.ShowDialog();
 
             //using (var form2 = new Form2(textBoxParametro.Text))
-            
+
 
 
 
@@ -227,11 +226,11 @@ namespace Erp
 
         private void cbTipo_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-           switch(cbTipo.Text)
+            switch (cbTipo.Text)
             {
                 case "Cnpj":
                     mskCriterio.Mask = "99,999,999/9999-99";
-                    mskCriterio.Size  = new Size(170, 26);
+                    mskCriterio.Size = new Size(170, 26);
                     break;
 
                 case "Cpf":
@@ -242,10 +241,10 @@ namespace Erp
 
                 default:
                     mskCriterio.Mask = ""
-;                   mskCriterio.Size = new Size(353, 26);
+; mskCriterio.Size = new Size(353, 26);
                     break;
             }
-                        
+
             mskCriterio.Focus();
 
         }

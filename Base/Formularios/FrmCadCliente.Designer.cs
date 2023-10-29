@@ -1,4 +1,4 @@
-﻿namespace Erp
+﻿namespace Base.Formularios
 {
     partial class FrmCadCliente
     {

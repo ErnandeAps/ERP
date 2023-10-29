@@ -1,22 +1,14 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Microsoft.Extensions.Configuration;
+﻿using System.Globalization;
 
-namespace Erp
+namespace Base.Formularios
 {
     public partial class FrmDashboard : Form
     {
-        public FrmDashboard()
+        private readonly FrmTelaCadastros formTelaCadastros;
+
+        public FrmDashboard(FrmTelaCadastros formTelaCadastros)
         {
+            this.formTelaCadastros = formTelaCadastros;
             InitializeComponent();
         }
 
@@ -76,22 +68,18 @@ namespace Erp
 
         private void btnCadastros_Click(object sender, EventArgs e)
         {
-            FrmTelaCadastros frm = new FrmTelaCadastros();
-            frm.TopLevel = false;
-            pnlPrincipal.Controls.Add(frm);
-            frm.Show();
-
+            formTelaCadastros.TopLevel = false;
+            pnlPrincipal.Controls.Add(formTelaCadastros);
+            formTelaCadastros.Show();
         }
-
-       
-
         private void btnRelatorios_Click(object sender, EventArgs e)
         {
 
         }
 
         private void btnMovimentacao_Click(object sender, EventArgs e)
-        {FrmMovimentacao frm = new FrmMovimentacao ();
+        {
+            FrmMovimentacao frm = new FrmMovimentacao();
             frm.TopLevel = false;
             pnlPrincipal.Controls.Add(frm);
             frm.Show();

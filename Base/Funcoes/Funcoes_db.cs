@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.Windows.Forms;
-using Erp;
+﻿using Base.Data;
 using FirebirdSql.Data.FirebirdClient;
 
-
-namespace Erp
+namespace Base.Funcoes
 {
     class Funcoes_db
     {
@@ -58,16 +50,16 @@ namespace Erp
         }
         */
 
-        public static void db_InserirDados(Clientes clientes)
+        public static void db_InserirDados(Cliente cliente)
         {
             {
                 try
                 {
                     string mSQL = "INSERT into clientes (tipo, Cnpj, Nome, Fantasia, Logradouro, Numero, Bairro, Municipio, Uf, Cep, Email, Contato," +
-                    " Telefone, Celular, Data, Roteiro) Values('" + clientes.ATIVO + "','" + clientes.CGC + "','" + clientes.NOME + "','" + clientes.FANTASIA + "','" + 
-                    clientes.LOGRADOURO  + "','" + clientes.NUMERO + "','" + clientes.BAIRRO + "','" + clientes.MUNICIPIO  + "','" + clientes.UF + "','" + 
-                    clientes.CEP + "','" + clientes.EMAIL + "','" + clientes.CONTATO + "','" + clientes.FONE + "','" + clientes.CELULAR + "','" + 
-                    clientes.CADASTRO + "','" + clientes.OBS + "')";
+                    " Telefone, Celular, Data, Roteiro) Values('" + cliente.ATIVO + "','" + cliente.CGC + "','" + cliente.NOME + "','" + cliente.FANTASIA + "','" + 
+                    cliente.LOGRADOURO  + "','" + cliente.NUMERO + "','" + cliente.BAIRRO + "','" + cliente.MUNICIPIO  + "','" + cliente.UF + "','" + 
+                    cliente.CEP + "','" + cliente.EMAIL + "','" + cliente.CONTATO + "','" + cliente.FONE + "','" + cliente.CELULAR + "','" + 
+                    cliente.CADASTRO + "','" + cliente.OBS + "')";
                    // MySqlCommand cmd = new MySqlCommand(mSQL,Conexao.AbrirConexao());
                    // cmd.ExecuteNonQuery();
                     
@@ -192,15 +184,15 @@ namespace Erp
         }
         */
 
-        public static void db_AlterarDados(Clientes clientes)
+        public static void db_AlterarDados(Cliente cliente)
         {
             {
                 try
                 {  
-                    string mSQL = "UPDATE clientes SET tipo='" + clientes.ATIVO + "', cnpj='" + clientes.CGC + "', Nome='" + clientes.NOME + "', Fantasia='" + clientes.FANTASIA + "'," +
-                    "Logradouro='" + clientes.LOGRADOURO  + "', Numero='" + clientes.NUMERO + "', Bairro='" + clientes.BAIRRO + "', Municipio='" + clientes.MUNICIPIO  + "'," +
-                    "Uf='" + clientes.UF + "', Cep='" + clientes.CEP + "', Email='" + clientes.EMAIL + "', Contato='" + clientes.CONTATO + "', Telefone='" + clientes.FONE + "'," +
-                    "Celular='" + clientes.CELULAR + "', Roteiro='" + clientes.OBS + "' WHERE id=" + clientes.ID_CADASTRO +"";
+                    string mSQL = "UPDATE clientes SET tipo='" + cliente.ATIVO + "', cnpj='" + cliente.CGC + "', Nome='" + cliente.NOME + "', Fantasia='" + cliente.FANTASIA + "'," +
+                    "Logradouro='" + cliente.LOGRADOURO  + "', Numero='" + cliente.NUMERO + "', Bairro='" + cliente.BAIRRO + "', Municipio='" + cliente.MUNICIPIO  + "'," +
+                    "Uf='" + cliente.UF + "', Cep='" + cliente.CEP + "', Email='" + cliente.EMAIL + "', Contato='" + cliente.CONTATO + "', Telefone='" + cliente.FONE + "'," +
+                    "Celular='" + cliente.CELULAR + "', Roteiro='" + cliente.OBS + "' WHERE id=" + cliente.ID_CADASTRO +"";
                     
                     //MySqlCommand cmd = new MySqlCommand(mSQL, Conexao.AbrirConexao());
                     //cmd.ExecuteNonQuery();
@@ -226,7 +218,7 @@ namespace Erp
         {
             //string mSQL = "Select * from CADASTRO where ID_CADASTRO=" + id + "";
             string mSQL = "Select ID_CADASTRO, CGC, RAZAO, FANTASIA, IE, ENDER, NUMERO, BAIRRO, CIDADE from CADASTRO where ID_CADASTRO>0";
-            Clientes clientes = new Clientes();
+            Cliente cliente = new Cliente();
             using (FbConnection conexaoFireBird = ConexaoFb.getInstancia().getConexao())
 
                 try
@@ -254,7 +246,7 @@ namespace Erp
                 {
                     conexaoFireBird.Close();
                 }
-            return clientes;
+            return cliente;
 
             /*
            adapter.Fill(dataTable);
@@ -394,12 +386,12 @@ namespace Erp
         }
         */
 
-        public static string db_ExcluirDados(Clientes clientes)
+        public static string db_ExcluirDados(Cliente cliente)
         {
             try
             {
                 
-                string mSQL = "DELETE FROM clientes WHERE id=" + clientes.ID_CADASTRO;
+                string mSQL = "DELETE FROM clientes WHERE id=" + cliente.ID_CADASTRO;
                 //MySqlCommand cmd = new MySqlCommand(mSQL, Conexao.AbrirConexao());
                // cmd.ExecuteNonQuery();
             }catch(Exception e)

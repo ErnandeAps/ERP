@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Erp
+﻿namespace Base.Funcoes
 {
 	
 	public class FuncoesDiversas
@@ -63,7 +56,10 @@ namespace Erp
 		
 		public static string SemFormatacao(string Codigo)
 		{
-			return Codigo.Replace(".", string.Empty).Replace("-", string.Empty).Replace("/", string.Empty);
+			return Codigo
+				.Replace(".", string.Empty)
+				.Replace("-", string.Empty)
+				.Replace("/", string.Empty);
 		}
 
 	}

@@ -1,0 +1,16 @@
+version: '3'
+services:
+  firebird-server:
+    image: jacobalberty/firebird
+    container_name: firebird-container
+    environment:
+      ISC_PASSWORD: masterkey
+    ports:
+      - "3050:3050"
+    volumes:
+      - ./data:/tmp/var/lib/firebird/data/data
+    networks:
+      - firebird-network
+      
+networks:
+  firebird-network:

@@ -1,5 +1,5 @@
 ﻿
-namespace Erp
+namespace Base.Formularios
 {
     partial class FrmDashboard
     {

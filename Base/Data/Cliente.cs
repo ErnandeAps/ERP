@@ -1,9 +1,14 @@
-﻿namespace Erp
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Base.Data
 {
-    class Clientes
+    [Table("CLIENTE")]
+    public class Cliente
     {
+        [Key]
         public int ID_CADASTRO { get; set; }
-        public String  ATIVO { get; set; }
+        public string  ATIVO { get; set; }
         public string CGC { get; set; }
         public string IE { get; set; }
         public string NOME { get; set; }

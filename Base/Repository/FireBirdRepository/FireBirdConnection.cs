@@ -1,7 +1,7 @@
 ﻿using FirebirdSql.Data.FirebirdClient;
 using Microsoft.Extensions.Configuration;
 
-namespace Base.Funcoes;
+namespace Base.Repository.FireBirdRepository;
 
 public class FireBirdConnection
 {

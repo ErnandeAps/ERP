@@ -1,29 +1,23 @@
-﻿using Erp;
+﻿using Base.Data;
+using Base.Funcoes;
 using FirebirdSql.Data.FirebirdClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Erp
+namespace Base.Formularios
 {
     public partial class frmLocClientes : Form
     {
+        
+        private readonly FrmCadCliente formCadCliente;
                        
-       public string strID_CADASTRO;
-       public string Parametro
+        public string strID_CADASTRO;
+        public string Parametro
         {
             get { return strID_CADASTRO; }
         }
         
-        public frmLocClientes()
+        public frmLocClientes(FrmCadCliente formCliente)
         {
+            this.formCadCliente = formCliente;
             InitializeComponent();
         }
 
@@ -133,26 +127,26 @@ namespace Erp
             }
                                     
             using (FbConnection conexaoFireBird = ConexaoFb.getInstancia().getConexao())
-            try
-            {
+                try
+                {
                     conexaoFireBird.Open();
                     FbCommand cmd = new FbCommand(strSql, conexaoFireBird);
                     FbDataReader Resultado = cmd.ExecuteReader();
                    
                     if (Resultado.HasRows)
-                {
-                    while (Resultado.Read())
                     {
+                        while (Resultado.Read())
+                        {
 
-                        dtGrid.Rows.Add(Resultado[0], Resultado[1], Resultado[2], Resultado[3], Resultado[4], Resultado[5], Resultado[6], Resultado[7], Resultado[8]);
+                            dtGrid.Rows.Add(Resultado[0], Resultado[1], Resultado[2], Resultado[3], Resultado[4], Resultado[5], Resultado[6], Resultado[7], Resultado[8]);
 
+                        }
                     }
-                }
 
-            }catch(Exception)
-            {
-                MessageBox.Show("Não foi possível se conectar ao banco");
-            }
+                }catch(Exception)
+                {
+                    MessageBox.Show("Não foi possível se conectar ao banco");
+                }
                 finally
                 {
                     conexaoFireBird.Close();
@@ -195,26 +189,19 @@ namespace Erp
         private void btnClientes_Click(object sender, EventArgs e)
         {
             strID_CADASTRO = "";
-            FrmCadCliente frm = new FrmCadCliente(strID_CADASTRO);
-            frm.ShowDialog();
-
+            formCadCliente.ShowDialog(strID_CADASTRO);
         }
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
                         
             strID_CADASTRO = dtGrid.CurrentRow.Cells[0].Value.ToString();
-            Clientes clientes = new Clientes();
+            Cliente cliente = new Cliente();
             //using (var addfrm = new FrmCadCliente(strID_CADASTRO))
-
-            FrmCadCliente addfrm = new FrmCadCliente(strID_CADASTRO);
             
-            addfrm.ShowDialog();
+            formCadCliente.ShowDialog(strID_CADASTRO);
 
             //using (var form2 = new Form2(textBoxParametro.Text))
-            
-
-
 
             //clientes = (Clientes)Funcoes_db.db_LocalizarDadosClientes(addfrm.Parametro);
             //preencheDados(clientes);
@@ -227,7 +214,7 @@ namespace Erp
 
         private void cbTipo_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-           switch(cbTipo.Text)
+            switch(cbTipo.Text)
             {
                 case "Cnpj":
                     mskCriterio.Mask = "99,999,999/9999-99";
@@ -242,7 +229,7 @@ namespace Erp
 
                 default:
                     mskCriterio.Mask = ""
-;                   mskCriterio.Size = new Size(353, 26);
+                        ;                   mskCriterio.Size = new Size(353, 26);
                     break;
             }
                         

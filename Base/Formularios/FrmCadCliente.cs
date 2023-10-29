@@ -1,96 +1,75 @@
 ﻿using System.Text.Json;
+using Base.Data;
+using Base.ExternalApis;
+using Base.Funcoes;
+using Base.Repository.ClienteRepository;
 
-
-namespace Erp
+namespace Base.Formularios
 {
     public partial class FrmCadCliente : Form
     {
+        private readonly IClienteRepository repository;
+        private readonly IReceitaApi receitaApi;
+        
         string URI = "";
-        DateTime data = DateTime.Now;
         public string strID_CADASTRO;
-         /*
-        public FrmCadCliente(string parametro) : this()
-        {
-             strID_CADASTRO = parametro;
-        }
-         
-        public string Parametro
-        {
-            get { return Parametro; }
-        }
-         */
 
-        public FrmCadCliente(string Parametro)
+        public DialogResult ShowDialog(string clienteId)
         {
-            strID_CADASTRO = Parametro;
-            InitializeComponent();
-            string DataFormato = data.ToString("d");
+            strID_CADASTRO = clienteId;
+            string DataFormato = DateTime.Now.ToString("d");
             maskData.Text = DataFormato;
             loadCadastro();
+            return ShowDialog();
         }
 
-        
+        public FrmCadCliente(IClienteRepository repository, IReceitaApi receitaApi)
+        {
+            this.repository = repository;
+            this.receitaApi = receitaApi;
+            InitializeComponent();
+        }
 
         private void BtnPcnpj_Click(object sender, EventArgs e)
         {
             if (cbTipo.Text == "CNPJ")
             {
                 ConsultarCnpj();
-                
+                return;
+            }
 
+            if (FuncoesDiversas.ValidaCPF.IsCpf(maskCnpjCpf.Text))
+            {
+                maskCnpjCpf.Text = FuncoesDiversas.FormatCPF(maskCnpjCpf.Text);
+                txtNome.Focus();
             }
             else
             {
-                if (FuncoesDiversas.ValidaCPF.IsCpf(maskCnpjCpf.Text))
-                {
-                    maskCnpjCpf.Text = FuncoesDiversas.FormatCPF(maskCnpjCpf.Text);
-                    txtNome.Focus();
-                }else
-                {
-                    MessageBox.Show("Não foi possível validar o CPF : " + maskCnpjCpf.Text);
-                }
-            }    
+                MessageBox.Show("Não foi possível validar o CPF : " + maskCnpjCpf.Text);
+            }
+            
         }
 
         private async void ConsultarCnpj()
         {
             string strCnpj = FuncoesDiversas.SemFormatacao(maskCnpjCpf.Text);
-            URI = "https://www.receitaws.com.br/v1/cnpj/" + strCnpj;
-            using (var client = new HttpClient())
+            var receitaResponse = await receitaApi.ConsultarCNPJ(strCnpj);
+            if (receitaResponse is { IsSuccessStatusCode: false, Content: not null })
             {
-                using (var response = await client.GetAsync(URI))
-                {
-                    if (response.IsSuccessStatusCode)
-                    {
-                       
-                        var JsonString = await response.Content.ReadAsStringAsync();
-                        Clientes empresa = JsonSerializer.Deserialize<Clientes>(JsonString);
-
-                        try
-                        {
-                            maskCnpjCpf.Text = empresa.CGC;
-                            txtNome.Text = empresa.NOME ;
-                            txtFantasia.Text = empresa.FANTASIA;
-                            txtEnd.Text = empresa.LOGRADOURO;
-                            txtNum.Text = empresa.NUMERO;        
-                            txtBairro.Text = empresa.BAIRRO;
-                            txtCidade.Text = empresa.MUNICIPIO ;
-                            txtUf.Text = empresa.UF;
-                            txtCep.Text = empresa.CEP;
-                            txtEmail.Text = empresa.EMAIL;
-
-                        }
-                        catch (System.Exception ex)
-                        {
-                            MessageBox.Show(ex.ToString());
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Não foi possível obter o CNPJ : " + response.StatusCode);
-                    }
-                }
+                MessageBox.Show("Não foi possível obter o CNPJ : " + receitaResponse.StatusCode);
             }
+
+            var empresa = receitaResponse.Content;
+            maskCnpjCpf.Text = empresa.CGC;
+            txtNome.Text = empresa.NOME ;
+            txtFantasia.Text = empresa.FANTASIA;
+            txtEnd.Text = empresa.LOGRADOURO;
+            txtNum.Text = empresa.NUMERO;        
+            txtBairro.Text = empresa.BAIRRO;
+            txtCidade.Text = empresa.MUNICIPIO ;
+            txtUf.Text = empresa.UF;
+            txtCep.Text = empresa.CEP;
+            txtEmail.Text = empresa.EMAIL;
         }
 
         private void cbTipop_SelectedIndexChanged(object sender, EventArgs e)
@@ -130,7 +109,7 @@ namespace Erp
                     /*
                     CorreiosApi correiosapi = new CorreiosApi();
                     var retorno = correiosapi.consultaCEP(txtCep.Text);
-                    
+
                     txtEnd.Text = retorno.end;
                     txtBairro.Text = retorno.bairro;
                     txtCidade.Text = retorno.cidade;
@@ -154,24 +133,20 @@ namespace Erp
              
                 switch (btnSalvar.Text)
                 {
-                case "Novo":
-                    
+                    case "Novo":
                         cmdLimpar();
                         btnSalvar.Text = "Salvar";
                         cbTipo.Focus();
-                        
                         break;
 
-                case "Salvar":
-                                                
-                        Funcoes_db.db_InserirDados((Clientes)loadClientes());
+                    case "Salvar":
+                        Funcoes_db.db_InserirDados(LoadClienteFromForm());
                         MessageBox.Show("Registro inserido com sucesso !", "Inserir", MessageBoxButtons.OK);
                         cmdLimpar();
                         break;
 
-                case "Atualizar":
-                                               
-                        Funcoes_db.db_AlterarDados((Clientes)loadClientes());
+                    case "Atualizar":
+                        Funcoes_db.db_AlterarDados(LoadClienteFromForm());
                         MessageBox.Show("Registro atualizado com sucesso !", "Atualizar", MessageBoxButtons.OK);
                         cmdLimpar();
                         break;
@@ -202,7 +177,7 @@ namespace Erp
                     ((MaskedTextBox)myControl).Text = "";
                 }
             }
-            string DataFormato = data.ToString("d");
+            string DataFormato = DateTime.Now.ToString("d");
             maskData.Text = DataFormato;
             btnExcluir.Enabled = false;
             btnSalvar.Text = "Novo";
@@ -220,7 +195,7 @@ namespace Erp
                 cmdLimpar();
             else
             {
-                
+
                 clientes = (Clientes)Funcoes_db.db_LocalizarDadosClientes(addfrm.Parametro);
                 preencheDados(clientes);
                 btNovo.Text = "Atualizar";
@@ -229,7 +204,7 @@ namespace Erp
             */
         }
 
-        private void preencheDados(Clientes cli)
+        private void preencheDados(Cliente cli)
         {
             cmdLimpar();
             txtId.Text = cli.ID_CADASTRO.ToString();
@@ -264,7 +239,7 @@ namespace Erp
                 DialogResult dialogResult = MessageBox.Show("Tem certeza que deseja excluir este registro?", "Assistente de exclesão", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    Funcoes_db.db_ExcluirDados((Clientes)loadClientes());
+                    Funcoes_db.db_ExcluirDados(LoadClienteFromForm());
                     MessageBox.Show("Registro excluído com sucesso !", "Alterar", MessageBoxButtons.OK);
                     cmdLimpar();
                 }    
@@ -275,44 +250,41 @@ namespace Erp
             }
         }
 
-        private Object loadClientes()
+        private Cliente LoadClienteFromForm()
         {
-            Clientes clientes = new Clientes();
+            Cliente cliente = new Cliente();
             if (txtId.Text!="")
-                clientes.ID_CADASTRO = Convert.ToInt32(txtId.Text);
+                cliente.ID_CADASTRO = Convert.ToInt32(txtId.Text);
             
             //clientes.ATIVO = cbTipo.Text;
-            clientes.CGC = maskCnpjCpf.Text;
-            clientes.NOME  = txtNome.Text;
-            clientes.FANTASIA = txtFantasia.Text;
-            clientes.LOGRADOURO  = txtEnd.Text;
-            clientes.NUMERO = txtNum.Text;
-            clientes.BAIRRO = txtBairro.Text;
-            clientes.MUNICIPIO  = txtCidade.Text;
-            clientes.UF = txtUf.Text;
-            clientes.CEP = txtCep.Text;
-            clientes.EMAIL = txtEmail.Text;
-            clientes.CONTATO = txtContato.Text;
-            clientes.FONE = maskFone.Text;
-            clientes.CELULAR = maskCelular.Text;
-           // clientes.CADASTRO = maskData.Text;
-            clientes.OBS = txtRoteiro.Text;
-            return clientes;
+            cliente.CGC = maskCnpjCpf.Text;
+            cliente.NOME  = txtNome.Text;
+            cliente.FANTASIA = txtFantasia.Text;
+            cliente.LOGRADOURO  = txtEnd.Text;
+            cliente.NUMERO = txtNum.Text;
+            cliente.BAIRRO = txtBairro.Text;
+            cliente.MUNICIPIO  = txtCidade.Text;
+            cliente.UF = txtUf.Text;
+            cliente.CEP = txtCep.Text;
+            cliente.EMAIL = txtEmail.Text;
+            cliente.CONTATO = txtContato.Text;
+            cliente.FONE = maskFone.Text;
+            cliente.CELULAR = maskCelular.Text;
+            // clientes.CADASTRO = maskData.Text;
+            cliente.OBS = txtRoteiro.Text;
+            return cliente;
         }
 
         private void novoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-
                 switch (btnSalvar.Text)
                 {
                     case "Novo":
-
                         cmdLimpar();
                         btnSalvar.Text = "Salvar";
                         cbTipo.Focus();
-
                         break;
 
                     case "Salvar":
@@ -322,11 +294,10 @@ namespace Erp
                         }
                         else
                         {
-                            Funcoes_db.db_InserirDados((Clientes)loadClientes());
+                            Funcoes_db.db_InserirDados(LoadClienteFromForm());
                             MessageBox.Show("Registro inserido com sucesso !", "Inserir", MessageBoxButtons.OK);
                             cmdLimpar();
                         } 
-                        
                         break;
 
                     case "Atualizar":
@@ -336,7 +307,7 @@ namespace Erp
                         }
                         else
                         {
-                            Funcoes_db.db_AlterarDados((Clientes)loadClientes());
+                            Funcoes_db.db_AlterarDados(LoadClienteFromForm());
                             MessageBox.Show("Registro atualizado com sucesso !", "Atualizar", MessageBoxButtons.OK);
                             cmdLimpar();
                         }
@@ -360,7 +331,7 @@ namespace Erp
                 cmdLimpar();
             else
             {
-                
+
                 clientes = (Clientes)Funcoes_db.db_LocalizarDadosClientes(addfrm.Parametro);
                 preencheDados(clientes);
                 btNovo.Text = "Atualizar";
@@ -374,7 +345,7 @@ namespace Erp
             //int codigo = Convert.ToInt32(txtId.Text);
             try
             {
-               if(txtId.Text=="")
+                if(txtId.Text=="")
                 {
                     MessageBox.Show("Consulte um cliente para continuar.", "Alterar", MessageBoxButtons.OK);
                 }
@@ -383,7 +354,7 @@ namespace Erp
                     DialogResult dialogResult = MessageBox.Show("Tem certeza que deseja excluir este registro?", "Assistente de exclesão", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        Funcoes_db.db_ExcluirDados((Clientes)loadClientes());
+                        Funcoes_db.db_ExcluirDados(LoadClienteFromForm());
                         MessageBox.Show("Registro excluído com sucesso !", "Alterar", MessageBoxButtons.OK);
                         cmdLimpar();
                     }
@@ -442,7 +413,7 @@ namespace Erp
                         }
                         else
                         {
-                            Funcoes_db.db_InserirDados((Clientes)loadClientes());
+                            Funcoes_db.db_InserirDados(LoadClienteFromForm());
                             MessageBox.Show("Registro inserido com sucesso !", "Inserir", MessageBoxButtons.OK);
                             cmdLimpar();
                         }
@@ -456,7 +427,7 @@ namespace Erp
                         }
                         else
                         {
-                            Funcoes_db.db_AlterarDados((Clientes)loadClientes());
+                            Funcoes_db.db_AlterarDados(LoadClienteFromForm());
                             MessageBox.Show("Registro atualizado com sucesso !", "Atualizar", MessageBoxButtons.OK);
                             cmdLimpar();
                         }
@@ -482,7 +453,7 @@ namespace Erp
                 DialogResult dialogResult = MessageBox.Show("Tem certeza que deseja excluir este registro?", "Assistente de exclesão", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    Funcoes_db.db_ExcluirDados((Clientes)loadClientes());
+                    Funcoes_db.db_ExcluirDados(LoadClienteFromForm());
                     MessageBox.Show("Registro excluído com sucesso !", "Alterar", MessageBoxButtons.OK);
                     cmdLimpar();
                 }
@@ -505,7 +476,7 @@ namespace Erp
             }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private async void btnSalvar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -517,12 +488,12 @@ namespace Erp
                 {
                     if (txtId.Text =="")
                     {
-                        Funcoes_db.db_InserirDados((Clientes)loadClientes());
+                        var result = await repository.SalvarCliente(LoadClienteFromForm());
                         MessageBox.Show("Registro inserido com sucesso !", "Inserir", MessageBoxButtons.OK);
                     }
                     else
                     {
-                        Funcoes_db.db_AlterarDados((Clientes)loadClientes());
+                        Funcoes_db.db_AlterarDados(LoadClienteFromForm());
                         MessageBox.Show("Registro atualizado com sucesso !", "Atualizar", MessageBoxButtons.OK);
                     }
                 }
@@ -541,13 +512,13 @@ namespace Erp
             }
             else
             {
-                Clientes clientes = new Clientes();
-                clientes = (Clientes)Funcoes_db.db_LocalizarDadosClientes(strID_CADASTRO);
-               preencheDados(clientes);
-                    //btNovo.Text = "Atualizar";
-                    //btExcluir.Enabled = true;
+                Cliente cliente = new Cliente();
+                cliente = (Cliente)Funcoes_db.db_LocalizarDadosClientes(strID_CADASTRO);
+                preencheDados(cliente);
+                //btNovo.Text = "Atualizar";
+                //btExcluir.Enabled = true;
                
             }
         }
     }
-    }
+}

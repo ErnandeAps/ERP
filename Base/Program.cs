@@ -1,7 +1,12 @@
-using Erp;
+using Base.Db;
+using Base.ExternalApis;
+using Base.Formularios;
+using Base.Repository.ClienteRepository;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Refit;
 
 namespace Base;
 
@@ -25,6 +30,10 @@ static class Program
             })
             .ConfigureServices((hostContext, services) =>
             {
+                services.ConfigureDatabase(hostContext.Configuration);
+                services.ConfigureExternalApis(hostContext.Configuration);
+                services.AddRepositories();
+                services.AddForms();
                 services.AddScoped<FrmDashboard>();
             });
         var host = builder.Build();
@@ -32,9 +41,40 @@ static class Program
         {
             IServiceProvider services = serviceScope.ServiceProvider;
             var mainform = services.GetRequiredService<FrmDashboard>();
-            System.Windows.Forms.Application.Run(mainform);
+            Application.Run(mainform);
         }
     }
 
+    private static IServiceCollection AddRepositories(this IServiceCollection services)
+    {
+        services.AddScoped<IClienteRepository, ClienteRepository>();
+        return services;
+    }
 
+    private static IServiceCollection ConfigureDatabase(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddDbContext<FireBirdContext>
+        (x => x.UseFirebird
+            (configuration.GetSection("FireBirdConnectionString")?.Value));
+        return services;
+    }
+
+    private static IServiceCollection ConfigureExternalApis(this IServiceCollection services, IConfiguration configuration)
+    {
+        services
+            .AddRefitClient<ICorreiosApi>()
+            .ConfigureHttpClient(c => c.BaseAddress = new Uri("https://api.github.com"));
+
+        services
+            .AddRefitClient<IReceitaApi>()
+            .ConfigureHttpClient(c => c.BaseAddress = new Uri("https://www.receitaws.com.br/v1"));
+        return services;
+    }
+
+    private static IServiceCollection AddForms(this IServiceCollection services)
+    {
+        services.AddScoped<FrmCadCliente>();
+        services.AddScoped<FrmTelaCadastros>();
+        return services;
+    }
 }

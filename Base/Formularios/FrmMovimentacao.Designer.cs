@@ -31,11 +31,12 @@ namespace Erp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMovimentacao));
             panel1 = new Panel();
+            btnCte = new Button();
+            btnMdfe = new Button();
             btnParametros = new Button();
             btnProdutos = new Button();
             btnSair = new Button();
             btnNfe = new Button();
-            btnOrcamento = new Button();
             btnVendas = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -43,11 +44,12 @@ namespace Erp
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btnCte);
+            panel1.Controls.Add(btnMdfe);
             panel1.Controls.Add(btnParametros);
             panel1.Controls.Add(btnProdutos);
             panel1.Controls.Add(btnSair);
             panel1.Controls.Add(btnNfe);
-            panel1.Controls.Add(btnOrcamento);
             panel1.Controls.Add(btnVendas);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -55,6 +57,40 @@ namespace Erp
             panel1.Name = "panel1";
             panel1.Size = new Size(933, 84);
             panel1.TabIndex = 2;
+            // 
+            // btnCte
+            // 
+            btnCte.BackColor = Color.White;
+            btnCte.FlatAppearance.BorderSize = 0;
+            btnCte.FlatStyle = FlatStyle.Flat;
+            btnCte.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCte.Image = (Image)resources.GetObject("btnCte.Image");
+            btnCte.ImageAlign = ContentAlignment.TopCenter;
+            btnCte.Location = new Point(198, 4);
+            btnCte.Margin = new Padding(4, 3, 4, 3);
+            btnCte.Name = "btnCte";
+            btnCte.Size = new Size(70, 74);
+            btnCte.TabIndex = 7;
+            btnCte.Text = "CTe";
+            btnCte.TextAlign = ContentAlignment.BottomCenter;
+            btnCte.UseVisualStyleBackColor = false;
+            // 
+            // btnMdfe
+            // 
+            btnMdfe.BackColor = Color.White;
+            btnMdfe.FlatAppearance.BorderSize = 0;
+            btnMdfe.FlatStyle = FlatStyle.Flat;
+            btnMdfe.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMdfe.Image = (Image)resources.GetObject("btnMdfe.Image");
+            btnMdfe.ImageAlign = ContentAlignment.TopCenter;
+            btnMdfe.Location = new Point(136, 3);
+            btnMdfe.Margin = new Padding(4, 3, 4, 3);
+            btnMdfe.Name = "btnMdfe";
+            btnMdfe.Size = new Size(70, 74);
+            btnMdfe.TabIndex = 6;
+            btnMdfe.Text = "MDFe";
+            btnMdfe.TextAlign = ContentAlignment.BottomCenter;
+            btnMdfe.UseVisualStyleBackColor = false;
             // 
             // btnParametros
             // 
@@ -64,7 +100,7 @@ namespace Erp
             btnParametros.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnParametros.Image = (Image)resources.GetObject("btnParametros.Image");
             btnParametros.ImageAlign = ContentAlignment.TopCenter;
-            btnParametros.Location = new Point(258, 3);
+            btnParametros.Location = new Point(318, 3);
             btnParametros.Margin = new Padding(4, 3, 4, 3);
             btnParametros.Name = "btnParametros";
             btnParametros.Size = new Size(70, 74);
@@ -81,7 +117,7 @@ namespace Erp
             btnProdutos.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnProdutos.Image = (Image)resources.GetObject("btnProdutos.Image");
             btnProdutos.ImageAlign = ContentAlignment.TopCenter;
-            btnProdutos.Location = new Point(197, 3);
+            btnProdutos.Location = new Point(257, 3);
             btnProdutos.Margin = new Padding(4, 3, 4, 3);
             btnProdutos.Name = "btnProdutos";
             btnProdutos.Size = new Size(70, 74);
@@ -98,7 +134,7 @@ namespace Erp
             btnSair.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnSair.Image = (Image)resources.GetObject("btnSair.Image");
             btnSair.ImageAlign = ContentAlignment.TopCenter;
-            btnSair.Location = new Point(319, 3);
+            btnSair.Location = new Point(406, 3);
             btnSair.Margin = new Padding(4, 3, 4, 3);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(70, 74);
@@ -116,7 +152,7 @@ namespace Erp
             btnNfe.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnNfe.Image = (Image)resources.GetObject("btnNfe.Image");
             btnNfe.ImageAlign = ContentAlignment.TopCenter;
-            btnNfe.Location = new Point(136, 3);
+            btnNfe.Location = new Point(74, 3);
             btnNfe.Margin = new Padding(4, 3, 4, 3);
             btnNfe.Name = "btnNfe";
             btnNfe.Size = new Size(70, 74);
@@ -124,24 +160,6 @@ namespace Erp
             btnNfe.Text = "NF-e";
             btnNfe.TextAlign = ContentAlignment.BottomCenter;
             btnNfe.UseVisualStyleBackColor = false;
-            // 
-            // btnOrcamento
-            // 
-            btnOrcamento.BackColor = Color.Transparent;
-            btnOrcamento.FlatAppearance.BorderSize = 0;
-            btnOrcamento.FlatStyle = FlatStyle.Flat;
-            btnOrcamento.Font = new Font("Franklin Gothic Medium Cond", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnOrcamento.Image = (Image)resources.GetObject("btnOrcamento.Image");
-            btnOrcamento.ImageAlign = ContentAlignment.TopCenter;
-            btnOrcamento.Location = new Point(74, 3);
-            btnOrcamento.Margin = new Padding(4, 3, 4, 3);
-            btnOrcamento.Name = "btnOrcamento";
-            btnOrcamento.Size = new Size(70, 74);
-            btnOrcamento.TabIndex = 1;
-            btnOrcamento.Text = "Dav";
-            btnOrcamento.TextAlign = ContentAlignment.BottomCenter;
-            btnOrcamento.UseVisualStyleBackColor = false;
-            btnOrcamento.Click += btnOrcamento_Click;
             // 
             // btnVendas
             // 
@@ -159,6 +177,7 @@ namespace Erp
             btnVendas.Text = "Vendas";
             btnVendas.TextAlign = ContentAlignment.BottomCenter;
             btnVendas.UseVisualStyleBackColor = false;
+            btnVendas.Click += btnVendas_Click;
             // 
             // FrmMovimentacao
             // 
@@ -187,7 +206,8 @@ namespace Erp
         private Button btnProdutos;
         private Button btnSair;
         private Button btnNfe;
-        private Button btnOrcamento;
         private Button btnVendas;
+        private Button btnMdfe;
+        private Button btnCte;
     }
 }

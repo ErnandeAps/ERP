@@ -57,6 +57,7 @@
             dtGrid.ReadOnly = true;
             dtGrid.Size = new Size(787, 341);
             dtGrid.TabIndex = 27;
+           
             // 
             // panel1
             // 
@@ -180,6 +181,7 @@
             btnVisualizar.Text = "Exibir";
             btnVisualizar.TextAlign = ContentAlignment.BottomCenter;
             btnVisualizar.UseVisualStyleBackColor = false;
+            btnVisualizar.Click += btnVisualizar_Click;
             // 
             // btnInserir
             // 

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\felip\\RiderProjects\\ERP\\Base\\Base.csproj": {}
+    "D:\\Desenvolvimento\\ERP\\Base\\Base.csproj": {}
   },
   "projects": {
-    "C:\\Users\\felip\\RiderProjects\\ERP\\Base\\Base.csproj": {
+    "D:\\Desenvolvimento\\ERP\\Base\\Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\felip\\RiderProjects\\ERP\\Base\\Base.csproj",
+        "projectUniqueName": "D:\\Desenvolvimento\\ERP\\Base\\Base.csproj",
         "projectName": "Base",
-        "projectPath": "C:\\Users\\felip\\RiderProjects\\ERP\\Base\\Base.csproj",
-        "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\felip\\RiderProjects\\ERP\\Base\\obj\\",
+        "projectPath": "D:\\Desenvolvimento\\ERP\\Base\\Base.csproj",
+        "packagesPath": "C:\\Users\\Suporte\\.nuget\\packages\\",
+        "outputPath": "D:\\Desenvolvimento\\ERP\\Base\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\felip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Suporte\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -80,7 +80,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

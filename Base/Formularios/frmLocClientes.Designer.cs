@@ -40,6 +40,7 @@
             btnSair = new Button();
             btnVisualizar = new Button();
             btnClientes = new Button();
+            btnSelecao = new Button();
             ((System.ComponentModel.ISupportInitialize)dtGrid).BeginInit();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -62,6 +63,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(btnSelecao);
             panel1.Controls.Add(btnFiltrar);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(btnSair);
@@ -82,7 +84,7 @@
             btnFiltrar.Font = new Font("Franklin Gothic Medium Cond", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnFiltrar.Image = (Image)resources.GetObject("btnFiltrar.Image");
             btnFiltrar.ImageAlign = ContentAlignment.TopCenter;
-            btnFiltrar.Location = new Point(715, 8);
+            btnFiltrar.Location = new Point(802, 8);
             btnFiltrar.Margin = new Padding(4, 3, 4, 3);
             btnFiltrar.Name = "btnFiltrar";
             btnFiltrar.Size = new Size(70, 74);
@@ -99,7 +101,7 @@
             groupBox1.Controls.Add(cbTipo);
             groupBox1.Controls.Add(label10);
             groupBox1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.Location = new Point(226, 8);
+            groupBox1.Location = new Point(313, 8);
             groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4, 3, 4, 3);
@@ -157,7 +159,7 @@
             btnSair.Font = new Font("Franklin Gothic Medium Cond", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSair.Image = (Image)resources.GetObject("btnSair.Image");
             btnSair.ImageAlign = ContentAlignment.TopCenter;
-            btnSair.Location = new Point(128, 3);
+            btnSair.Location = new Point(225, 3);
             btnSair.Margin = new Padding(4, 3, 4, 3);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(70, 74);
@@ -203,6 +205,24 @@
             btnClientes.UseVisualStyleBackColor = false;
             btnClientes.Click += btnClientes_Click;
             // 
+            // btnSelecao
+            // 
+            btnSelecao.BackColor = Color.Transparent;
+            btnSelecao.FlatAppearance.BorderSize = 0;
+            btnSelecao.FlatStyle = FlatStyle.Flat;
+            btnSelecao.Font = new Font("Franklin Gothic Medium Cond", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSelecao.Image = (Image)resources.GetObject("btnSelecao.Image");
+            btnSelecao.ImageAlign = ContentAlignment.TopCenter;
+            btnSelecao.Location = new Point(127, 3);
+            btnSelecao.Margin = new Padding(4, 3, 4, 3);
+            btnSelecao.Name = "btnSelecao";
+            btnSelecao.Size = new Size(70, 74);
+            btnSelecao.TabIndex = 26;
+            btnSelecao.Text = "Selecionar";
+            btnSelecao.TextAlign = ContentAlignment.BottomCenter;
+            btnSelecao.UseVisualStyleBackColor = false;
+            btnSelecao.Click += btnSelecao_Click;
+            // 
             // frmLocClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -238,5 +258,6 @@
         private Label lbTipo;
         private ComboBox cbTipo;
         private Label label10;
+        private Button btnSelecao;
     }
 }

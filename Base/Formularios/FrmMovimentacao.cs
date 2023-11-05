@@ -30,8 +30,13 @@ namespace Erp
 
         private void btnOrcamento_Click(object sender, EventArgs e)
         {
-            FrmLocDav  frm = new FrmLocDav();
-            frm.Show();
+
+        }
+
+        private void btnVendas_Click(object sender, EventArgs e)
+        {
+            FrmLocDav frm = new FrmLocDav();
+            frm.ShowDialog();
         }
     }
 }

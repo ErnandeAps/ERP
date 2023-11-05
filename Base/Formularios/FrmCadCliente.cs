@@ -8,18 +8,7 @@ namespace Erp
         string URI = "";
         DateTime data = DateTime.Now;
         public string strID_CADASTRO;
-        /*
-       public FrmCadCliente(string parametro) : this()
-       {
-            strID_CADASTRO = parametro;
-       }
-
-       public string Parametro
-       {
-           get { return Parametro; }
-       }
-        */
-
+        
         public FrmCadCliente(string Parametro)
         {
             strID_CADASTRO = Parametro;
@@ -28,8 +17,6 @@ namespace Erp
             maskData.Text = DataFormato;
             loadCadastro();
         }
-
-
 
         private void BtnPcnpj_Click(object sender, EventArgs e)
         {
@@ -111,16 +98,7 @@ namespace Erp
             {
                 try
                 {
-                    /*
-                    CorreiosApi correiosapi = new CorreiosApi();
-                    var retorno = correiosapi.consultaCEP(txtCep.Text);
                     
-                    txtEnd.Text = retorno.end;
-                    txtBairro.Text = retorno.bairro;
-                    txtCidade.Text = retorno.cidade;
-                    txtUf.Text = retorno.uf;
-                    txtNum.Focus();
-                    */
                 }
                 catch (Exception erro)
                 {
@@ -195,22 +173,7 @@ namespace Erp
 
         private void btLocalizar_Click(object sender, EventArgs e)
         {
-            /*
-            Clientes clientes = new Clientes();
-            frmLocClientes addfrm = new frmLocClientes();
-
-            addfrm.ShowDialog();
-            if (addfrm.Parametro == null)
-                cmdLimpar();
-            else
-            {
-                
-                clientes = (Clientes)Funcoes_db.db_LocalizarDadosClientes(addfrm.Parametro);
-                preencheDados(clientes);
-                btNovo.Text = "Atualizar";
-                btExcluir.Enabled = true;
-            }
-            */
+           
         }
 
         private void preencheDados(Clientes cli)
@@ -264,24 +227,23 @@ namespace Erp
             Clientes clientes = new Clientes();
             if (txtId.Text != "")
                 clientes.ID_CADASTRO = Convert.ToInt32(txtId.Text);
-
-            //clientes.ATIVO = cbTipo.Text;
-            clientes.CGC = maskCnpjCpf.Text;
-            clientes.NOME = txtNome.Text;
-            clientes.FANTASIA = txtFantasia.Text;
-            clientes.LOGRADOURO = txtEnd.Text;
-            clientes.NUMERO = txtNum.Text;
-            clientes.BAIRRO = txtBairro.Text;
-            clientes.MUNICIPIO = txtCidade.Text;
-            clientes.UF = txtUf.Text;
-            clientes.CEP = txtCep.Text;
-            clientes.EMAIL = txtEmail.Text;
-            clientes.CONTATO = txtContato.Text;
-            clientes.FONE = maskFone.Text;
-            clientes.CELULAR = maskCelular.Text;
-            // clientes.CADASTRO = maskData.Text;
-            clientes.OBS = txtRoteiro.Text;
-            return clientes;
+                       
+                clientes.CGC = maskCnpjCpf.Text;
+                clientes.NOME = txtNome.Text;
+                clientes.FANTASIA = txtFantasia.Text;
+                clientes.LOGRADOURO = txtEnd.Text;
+                clientes.NUMERO = txtNum.Text;
+                clientes.BAIRRO = txtBairro.Text;
+                clientes.MUNICIPIO = txtCidade.Text;
+                clientes.UF = txtUf.Text;
+                clientes.CEP = txtCep.Text;
+                clientes.EMAIL = txtEmail.Text;
+                clientes.CONTATO = txtContato.Text;
+                clientes.FONE = maskFone.Text;
+                clientes.CELULAR = maskCelular.Text;
+            
+                clientes.OBS = txtRoteiro.Text;
+                return clientes;
         }
 
         private void novoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -335,27 +297,12 @@ namespace Erp
 
         private void localizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*
-            Clientes clientes = new Clientes();
-            frmLocClientes addfrm = new frmLocClientes();
-
-            addfrm.ShowDialog();
-            if (addfrm.Parametro == null)
-                cmdLimpar();
-            else
-            {
-                
-                clientes = (Clientes)Funcoes_db.db_LocalizarDadosClientes(addfrm.Parametro);
-                preencheDados(clientes);
-                btNovo.Text = "Atualizar";
-                btExcluir.Enabled = true;
-            }
-            */
+           
         }
 
         private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //int codigo = Convert.ToInt32(txtId.Text);
+            
             try
             {
                 if (txtId.Text == "")
@@ -385,7 +332,7 @@ namespace Erp
             switch (e.KeyCode)
             {
                 case Keys.Escape:
-                    //sairToolStripMenuItem_Click(sender, e);
+                    
                     this.Close();
                     break;
 
@@ -518,9 +465,7 @@ namespace Erp
                 Clientes clientes = new Clientes();
                 clientes = (Clientes)Funcoes_db.db_LocalizarDadosClientes(strID_CADASTRO);
                 preencheDados(clientes);
-                //btNovo.Text = "Atualizar";
-                //btExcluir.Enabled = true;
-
+                
             }
         }
 

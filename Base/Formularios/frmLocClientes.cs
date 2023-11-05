@@ -16,17 +16,21 @@ namespace Erp
     public partial class frmLocClientes : Form
     {
 
-        public string strID_CADASTRO;
+        public string ID_CADASTRO;
+        public string NOME;
+        
+        
         public string Parametro
-        {
-            get { return strID_CADASTRO; }
+        {            
+            get { return ID_CADASTRO;}
+            set { ID_CADASTRO = value; }
         }
 
         public frmLocClientes()
         {
             InitializeComponent();
         }
-
+        
         private void frmLocClientes_Load(object sender, EventArgs e)
         {
             loadCbTipo();
@@ -154,7 +158,7 @@ namespace Erp
                 }
                 finally
                 {
-                    //conexaoFireBird.Close();
+
                 }
         }
 
@@ -165,7 +169,8 @@ namespace Erp
 
         private void dtGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            strID_CADASTRO = dtGrid.CurrentRow.Cells[0].Value.ToString();
+            ID_CADASTRO = dtGrid.CurrentRow.Cells[0].Value.ToString();
+            //this.Close();
 
 
         }
@@ -193,8 +198,8 @@ namespace Erp
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            strID_CADASTRO = "";
-            FrmCadCliente frm = new FrmCadCliente(strID_CADASTRO);
+            ID_CADASTRO = "";
+            FrmCadCliente frm = new FrmCadCliente(ID_CADASTRO);
             frm.ShowDialog();
 
         }
@@ -202,25 +207,13 @@ namespace Erp
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
 
-            strID_CADASTRO = dtGrid.CurrentRow.Cells[0].Value.ToString();
+            ID_CADASTRO = dtGrid.CurrentRow.Cells[0].Value.ToString();
             Clientes clientes = new Clientes();
-            //using (var addfrm = new FrmCadCliente(strID_CADASTRO))
+            using (var addfrm = new FrmCadCliente(ID_CADASTRO))
 
-            FrmCadCliente addfrm = new FrmCadCliente(strID_CADASTRO);
+                //FrmCadCliente addfrm = new FrmCadCliente(ID_CADASTRO);
 
-            addfrm.ShowDialog();
-
-            //using (var form2 = new Form2(textBoxParametro.Text))
-
-
-
-
-            //clientes = (Clientes)Funcoes_db.db_LocalizarDadosClientes(addfrm.Parametro);
-            //preencheDados(clientes);
-            //btNovo.Text = "Atualizar";
-            //btExcluir.Enabled = true;
-
-
+                addfrm.ShowDialog();
 
         }
 
@@ -285,6 +278,13 @@ namespace Erp
                         break;
                 }
             }
+        }
+
+        private void btnSelecao_Click(object sender, EventArgs e)
+        {
+
+            ID_CADASTRO = dtGrid.CurrentRow.Cells[0].Value.ToString();
+            this.Close();
         }
     }
 }

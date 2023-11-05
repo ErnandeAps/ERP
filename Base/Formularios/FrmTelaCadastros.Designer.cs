@@ -108,6 +108,7 @@ namespace Erp
             btnProdutos.Text = "Produtos";
             btnProdutos.TextAlign = ContentAlignment.BottomCenter;
             btnProdutos.UseVisualStyleBackColor = false;
+            btnProdutos.Click += btnProdutos_Click;
             // 
             // btnSair
             // 

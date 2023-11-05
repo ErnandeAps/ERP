@@ -121,8 +121,15 @@ namespace Base.Formularios
         private void btnInserir_Click(object sender, EventArgs e)
         {
             FrmDav FRM = new FrmDav();
-            FRM.Show();
+            FRM.ShowDialog();
         }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
 

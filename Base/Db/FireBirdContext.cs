@@ -7,16 +7,22 @@ public class FireBirdContext:DbContext
 {
     public FireBirdContext(DbContextOptions<FireBirdContext> options): base(options)
     {
-        var a = 2;
     }
     
     public DbSet<Cliente> Clientes { get; set; }
+    public DbSet<Fornecedor> Fornecedores { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<Cliente>(en =>
         {
             en.ToTable("CLIENTE");
+            en.HasKey(e => e.ID_CADASTRO);
+        });
+        
+        modelBuilder.Entity<Fornecedor>(en =>
+        {
+            en.ToTable("FORNECEDOR");
             en.HasKey(e => e.ID_CADASTRO);
         });
     }

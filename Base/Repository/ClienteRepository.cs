@@ -1,14 +1,15 @@
 ﻿using Base.Data;
 using Base.Db;
+using Base.Repository.FireBirdRepository;
 using Microsoft.EntityFrameworkCore;
 
 namespace Base.Repository.ClienteRepository;
 
-public class ClienteRepository:IClienteRepository
+public class ClienteRepository: DatabaseRepository<Cliente>, IClienteRepository
 {
     private readonly FireBirdContext dbContext;
 
-    public ClienteRepository(FireBirdContext dbContext)
+    public ClienteRepository(FireBirdContext dbContext) : base(dbContext)
     {
         this.dbContext = dbContext;
     }
@@ -37,4 +38,11 @@ public class ClienteRepository:IClienteRepository
     {
         return await dbContext.Clientes.Where(e => e.ID_CADASTRO == id).FirstOrDefaultAsync();
     }
+}
+
+public interface IClienteRepository: IDatabaseRepository<Cliente>
+{
+    Task<bool> SalvarCliente(Cliente cliente);
+    Task<IEnumerable<Cliente>> ListarClientes();
+    Task<Cliente> BuscarClienteById(int id);
 }

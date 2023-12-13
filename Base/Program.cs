@@ -1,7 +1,10 @@
 using Base.Db;
 using Base.ExternalApis;
 using Base.Formularios;
+using Base.Repository;
 using Base.Repository.ClienteRepository;
+using Base.Repository.FireBirdRepository;
+using Base.Repository.FornecedorRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -47,7 +50,10 @@ static class Program
 
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
+        services.AddScoped(typeof(IDatabaseRepository<>), typeof(DatabaseRepository<>));
         services.AddScoped<IClienteRepository, ClienteRepository>();
+        services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+        services.AddScoped<IProdutoRepository, ProdutoRepository>();
         return services;
     }
 
